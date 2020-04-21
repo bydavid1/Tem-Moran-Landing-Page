@@ -1052,7 +1052,7 @@ $document.ready(function () {
 
 				if (url = $this.attr("data-slide-bg")) {
 					$this.css({
-						"background-image": "url(" + url + ")",
+						"background-image": "linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" + url + ")",
 						"background-size": "cover"
 					})
 				}
