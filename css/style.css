@@ -41219,8 +41219,8 @@ html .page .isotope-filters .list-isotop > li > a:hover, html .page .isotope-fil
 
 @media (min-width: 1200px) {
 	.rd-navbar-static.rd-navbar-secondary .rd-navbar-inner {
-		padding-top: 50px;
-		padding-bottom: 50px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 	}
 }
 
