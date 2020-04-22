@@ -7,6 +7,16 @@
                 class="small text-spacing-340 text-white text-uppercase text-bold">Nuestra empresa</span>
               <p class="offset-top-20">Está legalmente constituida bajo las leyes de la República y cumple con los requisitos para su operación, pago de impuestos (IVA, Renta) y demás requerimientos legales.</p>
             </div>
+            <div class="cell-sm-6 cell-lg-3 cell-xl-3 offset-top-40 offset-lg-top-0"><span class="small text-spacing-340 text-white text-uppercase text-bold">Información</span>
+                <ul class="list list-marked offset-top-20 list-xs">
+                  <li><a class="text-white" href="#">Nuestra compañía</a></li>
+                  <li><a class="text-white" href="#">Nuestros servicios</a></li>
+                  <li><a class="text-white" href="#">Inicio</a></li>
+                  <li><a class="text-white" href="#">Referencias</a></li>
+                  <li><a class="text-white" href="#">Contacto</a></li>
+                  <li><a class="text-white" href="#">Gallery</a></li>
+                </ul>
+              </div>
             <div class="cell-sm-6 cell-lg-4 cell-xl-3 offset-top-40 offset-lg-top-0"><span
                 class="small text-spacing-340 text-white text-uppercase text-bold">Contactanos</span>
               <ul class="list offset-top-20 text-left">

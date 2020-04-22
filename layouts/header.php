@@ -56,7 +56,7 @@
                   </li>
                   <li>
                     <div class="unit unit-horizontal unit-spacing-xs">
-                      <div class="unit-left"><span class="icon icon-primary fa-mail-forward"></span></div>
+                      <div class="unit-left"><span class="icon icon-primary fa-envelope"></span></div>
                       <div class="unit-body">
                         <div class="title"><span class="small">Correo Electronico</span></div>
                         <h6>ventas@temmoran.com</h6>
@@ -79,12 +79,11 @@
           <div class="rd-navbar-inner">
             <div class="rd-navbar-nav-wrap">
               <ul class="rd-navbar-nav">
-                <li class="active"><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre nosotros</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#experience">Experiencia</a></li>
-                <li><a href="#team">Equipo</a></li>
-                <li><a href="contact-us.php">Contactos</a></li>
+                <li class="active"><a href="index">Inicio</a></li>
+                <li><a href="sobre-nosotros">Sobre nosotros</a></li>
+                <li><a href="servicios">Servicios</a></li>
+                <li><a href="index#experience">Experiencia</a></li>
+                <li><a href="contactanos">Contactos</a></li>
               </ul>
             </div>
           </div>
