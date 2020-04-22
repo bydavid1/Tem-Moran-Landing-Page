@@ -32182,12 +32182,12 @@ html .page .isotope-filters .list-isotop > li > a:hover, html .page .isotope-fil
 
 @media (min-width: 1200px) {
 	.owl-carousel-wrap.wrap-fluid .owl-dot, .owl-carousel-wrap.owl-carousel-wrap-bullet .owl-dot {
-		display: none;
+		display: inline-block;
 	}
 }
 
 .owl-custom-navigation {
-	visibility: hidden;
+	visibility: visible;
 	opacity: 0;
 	filter: alpha(opacity=0);
 }
@@ -32202,13 +32202,13 @@ html .page .isotope-filters .list-isotop > li > a:hover, html .page .isotope-fil
 
 .owl-custom-navigation .owl-prev, .owl-custom-navigation .owl-next {
 	z-index: 100;
-	display: none;
+	display: block;
 	position: absolute;
 	bottom: 25px;
 	font-size: 14px;
 	text-align: center;
 	cursor: pointer;
-	color: white;
+	color: green;
 	text-transform: uppercase;
 	font-weight: 500;
 	letter-spacing: .120em;
@@ -39931,7 +39931,7 @@ a.pswp__share--download:hover {
 
 @media (min-width: 1485px) {
 	.owl-carousel-brands .owl-dots {
-		display: none !important;
+		display: block !important;
 	}
 }
 
