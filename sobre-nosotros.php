@@ -3,17 +3,13 @@
 ?>
 
 <section
-    class="section section-75 section-sm-80 section-md-120 section-xl-150 section-xl-top-130 contact-darker bg-image bg-image-1"
+    class="section section-75 section-sm-80 section-md-120 section-xl-120 section-xl-top-120 contact-darker bg-image bg-image-1"
     id="experience">
-    <div class="shell">
-        <div class="range">
-            <div class="cell-md-10 cell-lg-7 cell-xl-6">
-                <div class="divider-block">
-                    <h2>Sobre nosotros</h2>
-                    <p class="big text-justify">Contamos con más de quince años de experiencia en:</p>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+    <div class="title title-white">
+      <h2>Sobre <span>Nosotros</span></h2>
+      <p>Contamos con más de quince años de experiencia en:</p>
+    </div>
     </div>
 </section>
 
@@ -38,7 +34,7 @@
                     </p>
                 </div>
             </div>
-            <div class="cell-sm-5 cell-sm-preffix-1 bg-custom-image bg-custom-image-right bg-custom-image-1">
+            <div class="cell-sm-5 cell-sm-preffix-1 bg-custom-image bg-custom-image-right bg-custom-image-2">
                 <div class="custom-border"></div>
             </div>
         </div>
@@ -49,30 +45,30 @@
 <section class="section section-sm-80 section-md-120 section-xl-150 section-xl-top-130 bg-wild-sand" id="about">
     <div class="shell">
         <div class="row spacing-30">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="divider-block">
                     <h2>Misión</h2>
-                    <p>Elaborar todo tipo de productos en metal sin clasificación previa, brindar servicios de
+                    <p class="text-justify">Elaborar todo tipo de productos en metal sin clasificación previa, brindar servicios de
                         instalación de sistemas eléctricos y obra civil a nivel nacional e internacional,
                         caracterizándonos por la calidad del material brindado, mano de obra calificada, puntualidad,
                         exactitud y durabilidad de nuestros productos.
                     </p>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="divider-block">
                     <h2>Vision</h2>
-                    <p>Ser una empresa líder en suministro de servicios de fabricación de todo tipo de estructuras
+                    <p class="text-justify">Ser una empresa líder en suministro de servicios de fabricación de todo tipo de estructuras
                         metálicas, mantenimiento preventivo y correctivo de maquinaria industrial, trabajos eléctricos y
                         obra civil en toda la región Centroamericana, enfocada y distinguida por la calidad de nuestro
                         producto y atención al cliente.
                     </p>
                 </div>
             </div>
-            <div class="col-sm-12">
+            <div class="col-sm-4">
                 <div class="divider-block">
                     <h2>Nuestra Empresa: </h2>
-                    <p>Está legalmente constituida bajo las leyes de la República y cumple con los requisitos para su
+                    <p class="text-justify">Está legalmente constituida bajo las leyes de la República y cumple con los requisitos para su
                         operación, pago de impuestos (IVA, Renta) y demás requerimientos legales.
                     </p>
                 </div>
@@ -85,11 +81,10 @@
 
 
 <!-- More info -->
-<section class="section section-lg-bottom-130 bg-wild-sand" id="about">
+<section class="section section-lg-bottom-130 section-top-130" id="about">
     <div class="shell">
-        <div class="row spacing-30">
-            <div class="col-sm-6">
-                <div class="divider-block">
+        <div class="row spacing-55">
+            <div class="col-sm-6 my-auto">
                     <h2>Nuestro Personal: </h2>
                     <p>Cuenta con las prestaciones de Ley (ISSS, AFP, aguinaldos, vacaciones) uniformes con el
                         respectivo membrete de la empresa, equipos de protección personal para cada tarea asignada
@@ -101,10 +96,11 @@
                         <li>Universidad Catolica de Occidente</li>
                         <li>Instituto Técnico de Capacitaciones – ITCA FEPADE</li>
                     </ul>
-                </div>
+            </div>
+            <div class="col-sm-6 mx-auto">
+                <img src="images/service5-mini.jpg" alt="" style="max-width: 100%;">
             </div>
             <div class="col-sm-6">
-                <div class="divider-block">
                     <h2>Prestaciones adicionales a la Ley: </h2>
                     <p>Nuestro personal cuenta con capacitaciones para realizar trabajos de alto riesgo en altura,
                         caliente, espacios confinados, manejo de químicos y levantamiento de cargas, proporcionados por
@@ -113,10 +109,8 @@
                     <p>Contamos con personal multidisciplinario en las áreas de ingeniería industrial, mecánica, civil y
                         arquitectura. Gestión de recurso humano en materia de reclutamiento, selección, supervisión,
                         seguridad y salud ocupacional mediante profesionales multidisciplinarios. </p>
-                </div>
             </div>
-            <div class="col-sm-12">
-                <div class="divider-block">
+            <div class="col-sm-6">
                     <h2>Charlas periódicas sobre seguridad industrial e higiene ocupacional: </h2>
                     <p>Nuestros equipos eléctricos (aparatos para soldar, pulidoras, taladros, extensiones, ect.)
                         cumplen con los chequeos de seguridad industrial bajo la norma ANSI-OSHA.
@@ -126,7 +120,6 @@
                         internacionales de seguridad ANSI-OSHA.
 
                     </p>
-                </div>
             </div>
         </div>
     </div>

@@ -5,15 +5,11 @@
 <section
     class="section section-75 section-sm-80 section-md-120 section-xl-150 section-xl-top-130 contact-darker bg-image bg-image-1"
     id="experience">
-    <div class="shell">
-        <div class="range">
-            <div class="col-md-10 col-lg-7 col-xl-6">
-                <div class="divider-block">
-                    <h2>Servicios</h2>
-                    <p class="big text-justify">Contamos con más de quince años de experiencia en:</p>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+    <div class="title title-white">
+      <h2>Nuestros <span>Servicios</span></h2>
+      <p class="text-gray-lighter">Contamos con más de quince años de experiencia en:</p>
+    </div>
     </div>
 </section>
 
@@ -97,13 +93,9 @@
         </div>
     </div>
     <div class="shell mt-5">
-        <div class="range">
-            <div class="cell-md-10 cell-lg-7 cell-xl-6">
-                <div class="divider-block">
-                    <h4>Soluciones eléctricas</h4>
-                </div>
-            </div>
-        </div>
+    <div class="title">
+      <h2>Soluciones <span>Eléctricas</span></h2>
+    </div>
     </div>
     <div class="shell mt-5">
         <div class="row spacing-30">
@@ -183,7 +175,7 @@
                 <div class="card">
                     <img src="images/electric10.jpg" alt="Card One" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title"> Montaje Y Mantenimiento De Aire Acondicionado</h5>
+                        <h5 class="card-title">Montaje Y Mantenimiento De Aire Acondicionado</h5>
                     </div>
                 </div>
             </div>
