@@ -7,7 +7,7 @@
                 class="small text-spacing-340 text-white text-uppercase text-bold">Nuestra empresa</span>
               <p class="offset-top-20 text-gray-lighter">Está legalmente constituida bajo las leyes de la República y cumple con los requisitos para su operación, pago de impuestos (IVA, Renta) y demás requerimientos legales.</p>
             </div>
-            <div class="cell-sm-6 cell-lg-3 cell-xl-3 offset-top-40 offset-lg-top-0"><span class="small text-spacing-340 text-white text-uppercase text-bold">Información</span>
+            <div class="cell-sm-6 cell-lg-3 cell-xl-3 offset-top-40 offset-lg-top-0 mx-auto"><span class="small text-spacing-340 text-white text-uppercase text-bold">Información</span>
                 <ul class="list list-marked offset-top-20 list-xs">
                   <li><a class="text-white" href="#">Nuestra compañía</a></li>
                   <li><a class="text-white" href="#">Nuestros servicios</a></li>
@@ -22,20 +22,20 @@
               <ul class="list offset-top-20 text-left">
                 <li>
                   <div class="unit unit-horizontal unit-spacing-xs">
-                    <div class="unit-left"><span class="icon icon-primary fa-map-marker"></span></div>
+                    <div class="unit-left"><span class="icon fa-map-marker" style="color: #82FFF5"></span></div>
                     <div class="unit-body"><a class="text-gray-lighter" href="#">Calle principal colonia San José,
                       Cantón El Guineo, El Congo Santa Ana</a></div>
                   </div>
                 </li>
                 <li>
                   <div class="unit unit-horizontal unit-spacing-xs">
-                    <div class="unit-left"><span class="icon icon-primary fa-phone"></span></div>
+                    <div class="unit-left"><span class="icon fa-phone" style="color: #82FFF5"></span></div>
                     <div class="unit-body"><a class="text-gray-lighter" href="tel:#">2431-5100 / 7920-5340</a></div>
                   </div>
                 </li>
                 <li>
                   <div class="unit unit-horizontal unit-spacing-xs">
-                    <div class="unit-left"><span class="icon icon-primary fa-envelope"></span></div>
+                    <div class="unit-left"><span class="icon fa-envelope" style="color: #82FFF5"></span></div>
                     <div class="unit-body"><a class="text-gray-lighter" href="mailto:#">ventas@temmoran.com</a></div>
                   </div>
                 </li>

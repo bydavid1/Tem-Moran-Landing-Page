@@ -5,11 +5,12 @@ include("layouts/header.php");
 <!-- Slider-->
 <div class="swiper-container swiper-slider swiper-secondary" data-height="100vh" data-min-height="300px">
   <div class="swiper-wrapper text-md-left">
-    <div class="swiper-slide" data-slide-bg="images/slider1.jpeg" style="">
+    <div class="swiper-slide" data-slide-bg="images/service5-mini.jpg" style="">
       <div class="swiper-slide-caption">
         <div class="container">
           <div class="range section-100-vh range-xs-middle range-xs-center range-md-right">
-            <div class="col-md-6 col-sm-9 postfix-md-right-90 postfix-xl-right-0" data-caption-animate="fadeInDown" data-caption-delay="200">
+            <div class="col-md-6 col-sm-9 postfix-md-right-90 postfix-xl-right-0" data-caption-animate="fadeInDown"
+              data-caption-delay="200">
               <h1 style="color: #fff !important;">Titulo principal 1</h1>
               <p class="h6 offset-top-40" style="color: #fff !important;">Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -72,7 +73,7 @@ include("layouts/header.php");
   </div>
 </section>
 
-<!-- Services-->
+<!-- Experience-->
 <section
   class="section section-75 section-sm-80 section-md-120 section-xl-150 section-xl-top-130 contact-darker bg-image bg-image-1"
   id="experience">
@@ -82,7 +83,7 @@ include("layouts/header.php");
       <p class="text-gray-lighter">Contamos con más de quince años de experiencia en:</p>
     </div>
     <div class="range">
-      <div class="col-sm-12 col-lg-3 mr-lg-5 ml-lg-5"><span class="icon-primary flaticon-robot"></span>
+      <div class="col-sm-12 col-lg-3 mr-lg-5 ml-lg-5"><span class="flaticon-robot" style="color: #82FFF5"></span>
         <h5 class="offset-top-15 offset-lg-top-25"><a href="#" style="color: #82FFF5">Metal mecánica</a></h5>
         <ul class="text-gray-lighter text-justify">
           <li>Fabricación y montaje de estructuras metálicas </li>
@@ -93,7 +94,7 @@ include("layouts/header.php");
         </ul>
       </div>
       <div class="col-sm-12 col-lg-3 ml-lg-5 mr-lg-5 offset-top-50 offset-sm-top-0"><span
-          class="icon-primary flaticon-wheel-barrow"></span>
+          class="flaticon-wheel-barrow" style="color: #82FFF5"></span>
         <h5 class="offset-top-15 offset-lg-top-25"><a href="#" style="color: #82FFF5">Obra Civil </a></h5>
         <ul class="text-gray-lighter text-justify">
           <li>Elaboración y modificación de planos</li>
@@ -103,8 +104,9 @@ include("layouts/header.php");
         </ul>
       </div>
       <div class="col-sm-12 col-lg-3 ml-lg-5 offset-top-50 offset-lg-top-0"><span
-          class="icon-primary flaticon-global"></span>
-        <h5 class="offset-top-15 offset-lg-top-25"><a href="#" style="color: #82FFF5"> Experiencia en Out-sourcing: </a></h5>
+          class="flaticon-global" style="color: #82FFF5"></span>
+        <h5 class="offset-top-15 offset-lg-top-25"><a href="#" style="color: #82FFF5"> Experiencia en Out-sourcing: </a>
+        </h5>
         <p class="text-gray-lighter text-justify">Contamos con experiencia para realizar trabajos bajo el sistema
           out-sourcing o por hora hombre ajustándonos a su presupuesto para la realización de sus proyectos.
           También contamos con el respaldo de profesionales que laboran con nosotros a tiempo completo como soporte
@@ -115,7 +117,7 @@ include("layouts/header.php");
   </div>
 </section>
 
-<!-- Project-->
+<!-- Services-->
 <section class="section-50 section-lg-bottom-0 section-130" id="products">
   <div class="container">
     <div class="title">
@@ -125,57 +127,69 @@ include("layouts/header.php");
   </div>
   <div class="container mt-5 mb-5">
     <div class="row spacing-30">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/service1.png" alt="Card One" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Fabricación de productos de metal</h5>
+    <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/service1.png" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Fabricación de productos de metal.</a></h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/service2.jpg" alt="Card One" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Montajes, Desmontajes Y Mantenimiento Industrial</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/service2.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Montajes, Desmontajes Y Mantenimiento Industrial.</a></h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/service3.png" alt="Card One" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Fabricación Y Montaje De Tuberías.</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/service3.png" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Fabricación Y Montaje De Tuberías.</a></h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/service4.png" alt="Card One" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Montaje Y Mantenimiento De Calderas</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/service4.png" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Montaje Y Mantenimiento De Calderas.</a></h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/service5.jpg" alt="Card One" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Obra Civil</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/service5.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Obra Civil.</a></h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/service6.png" alt="Card One" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Aplicación De Pinturas</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/service6.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Aplicación De Pinturas.</a></h3>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
-  <div class="container section-top-100">
+  <div class="container section-lg-top-25">
     <div class="title">
       <h2>Soluciones <span>Eléctricas</span></h2>
     </div>
@@ -183,51 +197,63 @@ include("layouts/header.php");
   <div class="shell mt-5 spacing-30">
     <div class="container">
       <div class="row spacing-40">
-        <div class="col-sm-12 col-lg-4">
-          <div class="card">
-            <img src="images/electric1.jpg" alt="Card One" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Montajes De Subestaciones.</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/electric1.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Montajes De Subestaciones.</a></h3>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="card">
-            <img src="images/electric2.jpg" alt="Card One" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Montaje De Plantas Generadoras.</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/electric2.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Montaje De Plantas Generadoras.</a></h3>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="card">
-            <img src="images/electric3.jpg" alt="Card One" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Montaje Y Mantenimiento De Motores Eléctricos.</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/electric3.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Montaje Y Mantenimiento De Motores Eléctricos.</a></h3>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="card">
-            <img src="images/electric4.jpg" alt="Card One" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Sistemas De Control</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/electric4.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Sistemas De Control.</a></h3>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="card">
-            <img src="images/electric5.jpg" alt="Card One" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Instalación De Ducteria</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/electric5.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Instalación De Ductería.</a></h3>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-lg-4">
-          <div class="card">
-            <img src="images/electric6.jpg" alt="Card One" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Fabricaciones De Red De Tierra</h5>
+        <div class="col-lg-4 col-md-6">
+          <div class="single-service-sec">
+            <div class="single-service-sec-img"> <img src="images/electric6.jpg" alt="" class="card-img-top"> </div>
+            <div class="service-details">
+              <div class="service-body">
+                <h3><a href="#">Fabricaciones De Red De Tierra.</a></h3>
+              </div>
             </div>
           </div>
         </div>

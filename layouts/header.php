@@ -7,6 +7,7 @@
   <title>Home</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 </head>
@@ -41,7 +42,7 @@
                       <div class="unit-left"><span class="icon icon-primary fa-phone"></span></div>
                       <div class="unit-body">
                         <div class="title"><span class="small">CONTACTO</span></div>
-                        <h6><a href="tel:#">2431-5100 / 7920-5340</a></h6>
+                        <h6><a href="tel:#">2431-5100 / <span class="icon icon-primary fa-whatsapp"></span> 7920-5340</a></h6>
                       </div>
                     </div>
                   </li>

@@ -3,7 +3,7 @@
 ?>
 
 <section
-    class="section section-75 section-sm-80 section-md-120 section-xl-120 section-xl-top-120 contact-darker bg-image bg-image-1"
+    class="section section-75 section-sm-80 section-md-100  section-xl-75 bg-image bg-image-1"
     id="experience">
     <div class="container">
     <div class="title title-white">

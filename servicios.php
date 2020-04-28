@@ -3,7 +3,7 @@
 ?>
 <!-- Services-->
 <section
-    class="section section-75 section-sm-80 section-md-120 section-xl-150 section-xl-top-130 contact-darker bg-image bg-image-1"
+    class="section section-75 section-sm-80 section-md-100  section-xl-75 bg-image bg-image-1"
     id="experience">
     <div class="container">
     <div class="title title-white">
@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="images/service6.png" alt="Card One" class="card-img-top">
+                    <img src="images/service6.jpg" alt="Card One" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Aplicación De Pinturas</h5>
                     </div>
