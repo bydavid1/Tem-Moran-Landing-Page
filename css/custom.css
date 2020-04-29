@@ -243,3 +243,118 @@
 		background-color: rgba(33, 33, 33, 0.65);
 	}
 }
+
+/*
+================================================
+ Contact Sec
+================================================
+*/
+.contact-sec {
+	width: 100%;
+	padding: 100px 0;
+	background: #f6f6f6;
+}
+.contact-sec .contact-form-wrapper::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 120%;
+	height: 100%;
+	background: #fff;
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.contact-sec .contact-form-wrapper {
+	background: #fff;
+	padding: 33px 30px 24px;
+	position: relative;
+}
+.contact-sec .contact-form-wrapper .form-group label {
+	font-size: 16px;
+	line-height: 26px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.contact-sec .input-field {
+	width: 100%;
+	height: 50px;
+	padding: 0 20px;
+	font-size: 14px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+}
+.contact-sec .input-field.textarea {
+	min-height: 137px;
+	padding: 15px 20px;
+	resize: none;
+	border-radius: 5px;
+}
+.contact-sec .address-area {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+	background: #37374a;
+	border-radius: 3px;
+	padding: 22px 30px 25px;
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.contact-sec .bttn:before {
+	background:#eee;
+}
+.contact-sec .address-area .title::after {
+	position: absolute;
+	content: "";
+	bottom: 0px;
+	left: 0px;
+	width: 50%;
+	height: 2px;
+	background: #fff;
+}
+.contact-sec .address-area .title {
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 34px;
+	color: #fff;
+	margin-bottom: 23px;
+	padding-bottom: 12px;
+	position: relative;
+	display: inline-block;
+}
+.contact-sec .address-area .address-list {
+	padding: 22px 0px 0px;
+}
+.contact-sec .address-area .address-list li {
+	margin-bottom: 25px;
+}
+.contact-sec .address-area .address-list li p {
+	color: #ffffff;
+	padding-left: 30px;
+	position: relative;
+}
+.contact-sec .address-area .address-list li p i {
+	position: absolute;
+	left: 0;
+	top: 9px;
+}
+.copyright {
+	padding: 15px 0;
+	width: 100%;
+	float: left;
+	background: #fff;
+	border-top: 1px solid #eee;
+}
+.copyright p {
+	color: #444;
+	text-align: center;
+	margin: 0;
+}
+.copyright .color {
+	color: #f04C36;
+}
