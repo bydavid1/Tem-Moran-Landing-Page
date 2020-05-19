@@ -33,27 +33,6 @@ var userAgent = navigator.userAgent.toLowerCase(),
 			textRotator: $(".text-rotator"),
 			owl: $(".owl-carousel"),
 			swiper: $(".swiper-slider"),
-			counter: $(".counter"),
-			flickrfeed: $(".flickr"),
-			twitterfeed: $(".twitter"),
-			progressBar: $(".progress-bar-js"),
-			isotope: $(".isotope"),
-			countDown: $(".countdown"),
-			calendar: $(".rd-calendar"),
-			facebookfeed: $(".facebook"),
-			instafeed: $(".instafeed"),
-			facebookWidget: $('#fb-root'),
-			materialTabs: $('.rd-material-tabs'),
-			filePicker: $('.rd-file-picker'),
-			fileDrop: $('.rd-file-drop'),
-			popover: $('[data-toggle="popover"]'),
-			dateCountdown: $('.DateCountdown'),
-			statefulButton: $('.btn-stateful'),
-			slick: $('.slick-slider'),
-			scroller: $(".scroll-wrap"),
-			socialite: $(".socialite"),
-			viewAnimate: $('.view-animate'),
-			selectFilter: $("select"),
 			stacktable: $("[data-responsive=true]"),
 			bootstrapDateTimePicker: $("[data-time-picker]"),
 			customWaypoints: $('[data-custom-scroll-to]'),
@@ -81,6 +60,7 @@ var userAgent = navigator.userAgent.toLowerCase(),
  * Initialize All Scripts
  */
 $document.ready(function () {
+
 	isNoviBuilder = window.xMode;
 
 	/**
@@ -261,32 +241,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * Google map function for getting latitude and longitude
-	 */
-	function getLatLngObject(str, marker, map, callback) {
-		var coordinates = {};
-		try {
-			coordinates = JSON.parse(str);
-			callback(new google.maps.LatLng(
-					coordinates.lat,
-					coordinates.lng
-			), marker, map)
-		} catch (e) {
-			map.geocoder.geocode({'address': str}, function (results, status) {
-				if (status === google.maps.GeocoderStatus.OK) {
-					var latitude = results[0].geometry.location.lat();
-					var longitude = results[0].geometry.location.lng();
-
-					callback(new google.maps.LatLng(
-							parseFloat(latitude),
-							parseFloat(longitude)
-					), marker, map)
-				}
-			})
-		}
-	}
-
-	/**
 	 * getSwiperHeight
 	 * @description  calculate the height of swiper slider basing on data attr
 	 */
@@ -367,46 +321,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * makeParallax
-	 * @description  create swiper parallax scrolling effect
-	 */
-	function makeParallax(el, speed, wrapper, prevScroll) {
-		var scrollY = window.scrollY || window.pageYOffset;
-
-		if (prevScroll != scrollY) {
-			prevScroll = scrollY;
-			el.addClass('no-transition');
-			el[0].style['transform'] = 'translate3d(0,' + -scrollY * (1 - speed) + 'px,0)';
-			el.height();
-			el.removeClass('no-transition');
-
-			if (el.attr('data-fade') === 'true') {
-				var bound = el[0].getBoundingClientRect(),
-						offsetTop = bound.top * 2 + scrollY,
-						sceneHeight = wrapper.outerHeight(),
-						sceneDevider = wrapper.offset().top + sceneHeight / 2.0,
-						layerDevider = offsetTop + el.outerHeight() / 2.0,
-						pos = sceneHeight / 6.0,
-						opacity;
-				if (sceneDevider + pos > layerDevider && sceneDevider - pos < layerDevider) {
-					el[0].style["opacity"] = 1;
-				} else {
-					if (sceneDevider - pos < layerDevider) {
-						opacity = 1 + ((sceneDevider + pos - layerDevider) / sceneHeight / 3.0 * 5);
-					} else {
-						opacity = 1 - ((sceneDevider - pos - layerDevider) / sceneHeight / 3.0 * 5);
-					}
-					el[0].style["opacity"] = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity.toFixed(2);
-				}
-			}
-		}
-
-		requestAnimationFrame(function () {
-			makeParallax(el, speed, wrapper, prevScroll);
-		});
-	}
-
-	/**
 	 * isScrolledIntoView
 	 * @description  check the element whas been scrolled into the view
 	 */
@@ -427,35 +341,6 @@ $document.ready(function () {
 				element.addClass('lazy-loaded');
 			}
 		});
-	}
-
-	/**
-	 * Live Search
-	 * @description  create live search results
-	 */
-	function liveSearch(options) {
-		$('#' + options.live).removeClass('cleared').html();
-		options.current++;
-		options.spin.addClass('loading');
-		$.get(handler, {
-			s: decodeURI(options.term),
-			liveSearch: options.live,
-			dataType: "html",
-			liveCount: options.liveCount,
-			filter: options.filter,
-			template: options.template
-		}, function (data) {
-			options.processed++;
-			var live = $('#' + options.live);
-			if (options.processed == options.current && !live.hasClass('cleared')) {
-				live.find('> #search-results').removeClass('active');
-				live.html(data);
-				setTimeout(function () {
-					live.find('> #search-results').addClass('active');
-				}, 50);
-			}
-			options.spin.parents('.rd-search').find('.input-group-addon').removeClass('loading');
-		})
 	}
 
 	/**
@@ -516,62 +401,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * Smooth scrolling
-	 * @description  Enables a smooth scrolling for Google Chrome (Windows)
-	 */
-	if (plugins.smoothScroll) {
-		$.getScript(plugins.smoothScroll);
-	}
-
-	/**
-	 * RD Audio player
-	 * @description Enables RD Audio player plugin
-	 */
-	if (plugins.rdAudioPlayer.length > 0) {
-		var i;
-		for (i = 0; i < plugins.rdAudioPlayer.length; i++) {
-			$(plugins.rdAudioPlayer[i]).RDAudio();
-		}
-	}
-
-	/**
-	 * Text Rotator
-	 * @description Enables Text Rotator plugin
-	 */
-	if (plugins.textRotator.length) {
-		var i;
-		for (i = 0; i < plugins.textRotator.length; i++) {
-			var textRotatorItem = plugins.textRotator[i];
-			$(textRotatorItem).rotator();
-		}
-	}
-
-	/**
-	 * Bootstrap Date time picker
-	 */
-	if (plugins.bootstrapDateTimePicker.length) {
-		var i;
-		for (i = 0; i < plugins.bootstrapDateTimePicker.length; i++) {
-			var $dateTimePicker = $(plugins.bootstrapDateTimePicker[i]);
-			var options = {};
-
-			options['format'] = 'dddd DD MMMM YYYY - HH:mm';
-			if ($dateTimePicker.attr("data-time-picker") == "date") {
-				options['format'] = 'dddd DD MMMM YYYY';
-				options['minDate'] = new Date();
-			} else if ($dateTimePicker.attr("data-time-picker") == "time") {
-				options['format'] = 'HH:mm';
-			}
-
-			options["time"] = ($dateTimePicker.attr("data-time-picker") != "date");
-			options["date"] = ($dateTimePicker.attr("data-time-picker") != "time");
-			options["shortTime"] = true;
-
-			$dateTimePicker.bootstrapMaterialDatePicker(options);
-		}
-	}
-
-	/**
 	 * Responsive Tabs
 	 * @description Enables Responsive Tabs plugin
 	 */
@@ -582,411 +411,6 @@ $document.ready(function () {
 			responsiveTabsItem.easyResponsiveTabs({
 				type: responsiveTabsItem.attr("data-type") === "accordion" ? "accordion" : "default"
 			});
-		}
-	}
-
-	/**
-	 * RD Instafeed
-	 * @description Enables Instafeed
-	 */
-	if (plugins.instafeed.length > 0) {
-		var i;
-		for (i = 0; i < plugins.instafeed.length; i++) {
-			var instafeedItem = $(plugins.instafeed[i]);
-			instafeedItem.RDInstafeed({});
-		}
-	}
-
-	/**
-	 * RD Twitter Feed
-	 * @description Enables RD Twitter Feed plugin
-	 */
-	if (plugins.twitterfeed.length > 0) {
-		var i;
-		for (i = 0; i < plugins.twitterfeed.length; i++) {
-			var twitterfeedItem = plugins.twitterfeed[i];
-			$(twitterfeedItem).RDTwitter({});
-		}
-	}
-
-	/**
-	 * RD MaterialTabs
-	 * @description Enables RD MaterialTabs plugin
-	 */
-	if (plugins.materialTabs.length) {
-		var i;
-		for (i = 0; i < plugins.materialTabs.length; i++) {
-			var materialTabsItem = plugins.materialTabs[i];
-			$(materialTabsItem).RDMaterialTabs({});
-		}
-	}
-
-	/**
-	 * RD Facebook
-	 * @description Enables RD Facebook plugin
-	 */
-	if (plugins.facebookfeed.length > 0) {
-		var i;
-		for (i = 0; i < plugins.facebookfeed.length; i++) {
-			var facebookfeedItem = plugins.facebookfeed[i];
-			$(facebookfeedItem).RDFacebookFeed({});
-		}
-	}
-
-	/**
-	 * Facebook widget
-	 * @description  Enables official Facebook widget
-	 */
-	if (plugins.facebookWidget.length) {
-		lazyInit(plugins.facebookWidget, function () {
-			(function (d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		});
-	}
-
-	/**
-	 * RD Flickr Feed
-	 * @description Enables RD Flickr Feed plugin
-	 */
-	if (plugins.flickrfeed.length > 0) {
-		var i;
-		for (i = 0; i < plugins.flickrfeed.length; i++) {
-			var flickrfeedItem = $(plugins.flickrfeed[i]);
-			flickrfeedItem.RDFlickr({
-				callback: function () {
-					var items = flickrfeedItem.find("[data-photo-swipe-item]");
-
-					if (items.length) {
-						for (var j = 0; j < items.length; j++) {
-							var image = new Image();
-							image.setAttribute('data-index', j);
-							image.onload = function () {
-								items[this.getAttribute('data-index')].setAttribute('data-size', this.naturalWidth + 'x' + this.naturalHeight);
-							};
-							image.src = items[j].getAttribute('href');
-						}
-					}
-				}
-			});
-		}
-	}
-
-	/**
-	 * Select2
-	 * @description Enables select2 plugin
-	 */
-	if (plugins.selectFilter.length) {
-		var i;
-		for (i = 0; i < plugins.selectFilter.length; i++) {
-			var select = $(plugins.selectFilter[i]);
-
-			select.select2({
-				theme: "bootstrap"
-			}).next().addClass(select.attr("class").match(/(input-sm)|(input-lg)|($)/i).toString().replace(new RegExp(",", 'g'), " "));
-		}
-	}
-
-	/**
-	 * Stepper
-	 * @description Enables Stepper Plugin
-	 */
-	if (plugins.stepper.length) {
-		plugins.stepper.stepper({
-			labels: {
-				up: "",
-				down: ""
-			}
-		});
-	}
-
-	/**
-	 * Radio
-	 * @description Add custom styling options for input[type="radio"]
-	 */
-	if (plugins.radio.length) {
-		var i;
-		for (i = 0; i < plugins.radio.length; i++) {
-			var $this = $(plugins.radio[i]);
-			$this.addClass("radio-custom").after("<span class='radio-custom-dummy'></span>")
-		}
-	}
-
-	/**
-	 * Checkbox
-	 * @description Add custom styling options for input[type="checkbox"]
-	 */
-	if (plugins.checkbox.length) {
-		var i;
-		for (i = 0; i < plugins.checkbox.length; i++) {
-			var $this = $(plugins.checkbox[i]);
-			$this.addClass("checkbox-custom").after("<span class='checkbox-custom-dummy'></span>")
-		}
-	}
-
-	/**
-	 * RD Filepicker
-	 * @description Enables RD Filepicker plugin
-	 */
-	if (plugins.filePicker.length || plugins.fileDrop.length) {
-		var i;
-		for (i = 0; i < plugins.filePicker.length; i++) {
-			var filePickerItem = plugins.filePicker[i];
-
-			$(filePickerItem).RDFilepicker({
-				metaFieldClass: "rd-file-picker-meta"
-			});
-		}
-
-		for (i = 0; i < plugins.fileDrop.length; i++) {
-			var fileDropItem = plugins.fileDrop[i];
-
-			$(fileDropItem).RDFilepicker({
-				metaFieldClass: "rd-file-drop-meta",
-				buttonClass: "rd-file-drop-btn",
-				dropZoneClass: "rd-file-drop"
-			});
-		}
-	}
-
-	/**
-	 * Popovers
-	 * @description Enables Popovers plugin
-	 */
-	if (plugins.popover.length) {
-		if (window.innerWidth < 767) {
-			plugins.popover.attr('data-placement', 'bottom');
-			plugins.popover.popover();
-		}
-		else {
-			plugins.popover.popover();
-		}
-	}
-
-	/**
-	 * jQuery Countdown
-	 * @description  Enable countdown plugin
-	 */
-	if (plugins.countDown.length) {
-		var i;
-		for (i = 0; i < plugins.countDown.length; i++) {
-			var countDownItem = plugins.countDown[i],
-					d = new Date(),
-					type = countDownItem.getAttribute('data-type'),
-					time = countDownItem.getAttribute('data-time'),
-					format = countDownItem.getAttribute('data-format'),
-					settings = [];
-
-			d.setTime(Date.parse(time)).toLocaleString();
-			settings[type] = d;
-			settings['format'] = format;
-			$(countDownItem).countdown(settings);
-		}
-	}
-
-	/**
-	 * TimeCircles
-	 * @description  Enable TimeCircles plugin
-	 */
-	if (plugins.dateCountdown.length) {
-		for (i = 0; i < plugins.dateCountdown.length; i++) {
-			var dateCountdownItem = $(plugins.dateCountdown[i]),
-					time = {
-						"Days": {
-							"text": "Days",
-							"color": "#0b7750",
-							"show": true
-						},
-						"Hours": {
-							"text": "Hours",
-							"color": "#0b7750",
-							"show": true
-						},
-						"Minutes": {
-							"text": "Minutes",
-							"color": "#0b7750",
-							"show": true
-						},
-						"Seconds": {
-							"text": "Seconds",
-							"color": "#0b7750",
-							"show": true
-						}
-					};
-			dateCountdownItem.TimeCircles({
-				"animation": "smooth",
-				"bg_width": .1,
-				"fg_width": 0.04,
-				"circle_bg_color": dateCountdownItem.attr('data-bg') ? dateCountdownItem.attr('data-bg') : "rgba(11,119,80, 1)",
-				"time": time
-			});
-
-			$(window).on('load resize orientationchange', (function ($dateCountdownItem, time) {
-				return function () {
-					if (window.innerWidth < 479) {
-						$dateCountdownItem.TimeCircles({
-							time: {
-								Minutes: {show: true},
-								Seconds: {show: false}
-							}
-						}).rebuild();
-					} else if (window.innerWidth < 767) {
-						$dateCountdownItem.TimeCircles({
-							time: {
-								Seconds: {show: false}
-							}
-						}).rebuild();
-					} else {
-						$dateCountdownItem.TimeCircles({time: time}).rebuild();
-					}
-				}
-
-			})($(dateCountdownItem), time));
-		}
-	}
-
-	/**
-	 * Bootstrap Buttons
-	 * @description  Enable Bootstrap Buttons plugin
-	 */
-	if (plugins.statefulButton.length) {
-		$(plugins.statefulButton).on('click', function () {
-			var statefulButtonLoading = $(this).button('loading');
-
-			setTimeout(function () {
-				statefulButtonLoading.button('reset')
-			}, 2000);
-		})
-	}
-
-	/**
-	 * RD Calendar
-	 * @description Enables RD Calendar plugin
-	 */
-	if (plugins.calendar.length) {
-		var i;
-		for (i = 0; i < plugins.calendar.length; i++) {
-			var calendarItem = $(plugins.calendar[i]);
-
-			calendarItem.rdCalendar({
-				days: calendarItem.attr("data-days") ? calendarItem.attr("data-days").split(/\s?,\s?/i) : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-				month: calendarItem.attr("data-months") ? calendarItem.attr("data-months").split(/\s?,\s?/i) : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-			});
-		}
-	}
-
-	/**
-	 * Circle Progress
-	 * @description Enable Circle Progress plugin
-	 */
-	if (plugins.circleProgress.length) {
-		var i;
-		for (i = 0; i < plugins.circleProgress.length; i++) {
-			var circleProgressItem = $(plugins.circleProgress[i]);
-			$document
-			.on("scroll", function () {
-				if (!circleProgressItem.hasClass('animated')) {
-
-					var arrayGradients = circleProgressItem.attr('data-gradient').split(",");
-
-					circleProgressItem.circleProgress({
-						value: circleProgressItem.attr('data-value'),
-						size: circleProgressItem.attr('data-size') ? circleProgressItem.attr('data-size') : 175,
-						fill: {gradient: arrayGradients, gradientAngle: Math.PI / 4},
-						startAngle: -Math.PI / 4 * 2,
-						emptyFill: circleProgressItem.attr('data-empty-fill') ? circleProgressItem.attr('data-empty-fill') : "rgb(245,245,245)",
-						thickness: circleProgressItem.attr('data-thickness') ? parseInt(circleProgressItem.attr('data-thickness')) : 10,
-
-					}).on('circle-animation-progress', function (event, progress, stepValue) {
-						$(this).find('span').text(String(stepValue.toFixed(3)).replace('0.', '').replace('1.', '1'));
-					});
-					circleProgressItem.addClass('animated');
-				}
-			})
-			.trigger("scroll");
-		}
-	}
-
-	/**
-	 * Progress bar
-	 * @description  Enable progress bar
-	 */
-	if (plugins.progressBar.length) {
-		var i,
-				bar,
-				type;
-
-		for (i = 0; i < plugins.progressBar.length; i++) {
-			var progressItem = plugins.progressBar[i];
-			bar = null;
-
-			if (progressItem.className.indexOf("progress-bar-horizontal") > -1) {
-				type = 'Line';
-			}
-
-			if (progressItem.className.indexOf("progress-bar-radial") > -1) {
-				type = 'Circle';
-			}
-
-			if (progressItem.getAttribute("data-stroke") && progressItem.getAttribute("data-value") && type) {
-				bar = new ProgressBar[type](progressItem, {
-					strokeWidth: Math.round(parseFloat(progressItem.getAttribute("data-stroke")) / progressItem.offsetWidth * 100),
-					trailWidth: progressItem.getAttribute("data-trail") ? Math.round(parseFloat(progressItem.getAttribute("data-trail")) / progressItem.offsetWidth * 100) : 0,
-					text: {
-						value: progressItem.getAttribute("data-counter") === "true" ? '0' : null,
-						className: 'progress-bar__body',
-						style: null
-					}
-				});
-				bar.svg.setAttribute('preserveAspectRatio', "none meet");
-				if (type === 'Line') {
-					bar.svg.setAttributeNS(null, "height", progressItem.getAttribute("data-stroke"));
-				}
-
-				bar.path.removeAttribute("stroke");
-				bar.path.className.baseVal = "progress-bar__stroke";
-				if (bar.trail) {
-					bar.trail.removeAttribute("stroke");
-					bar.trail.className.baseVal = "progress-bar__trail";
-				}
-
-				if (progressItem.getAttribute("data-easing") && !isIE) {
-					$(document)
-					.on("scroll", {"barItem": bar}, $.proxy(function (event) {
-						var bar = event.data.barItem;
-						var $this = $(this);
-
-						if (isScrolledIntoView($this) && this.className.indexOf("progress-bar--animated") === -1) {
-							this.className += " progress-bar--animated";
-							bar.animate(parseInt($this.attr("data-value")) / 100.0, {
-								easing: $this.attr("data-easing"),
-								duration: $this.attr("data-duration") ? parseInt($this.attr("data-duration")) : 800,
-								step: function (state, b) {
-									if (b._container.className.indexOf("progress-bar-horizontal") > -1 ||
-											b._container.className.indexOf("progress-bar-vertical") > -1) {
-										b.text.style.width = Math.abs(b.value() * 100).toFixed(0) + "%"
-									}
-									b.setText(Math.abs(b.value() * 100).toFixed(0));
-								}
-							});
-						}
-					}, progressItem))
-					.trigger("scroll");
-				} else {
-					bar.set(parseInt($(progressItem).attr("data-value")) / 100.0);
-					bar.setText($(progressItem).attr("data-value"));
-					if (type === 'Line') {
-						bar.text.style.width = parseInt($(progressItem).attr("data-value")) + "%";
-					}
-				}
-			} else {
-				console.error(progressItem.className + ": progress bar type is not defined");
-			}
 		}
 	}
 
@@ -1015,23 +439,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * ViewPort Universal
-	 * @description Add class in viewport
-	 */
-	if (plugins.viewAnimate.length) {
-		var i;
-		for (i = 0; i < plugins.viewAnimate.length; i++) {
-			var $view = $(plugins.viewAnimate[i]).not('.active');
-			$document.on("scroll", $.proxy(function () {
-				if (isScrolledIntoView(this)) {
-					this.addClass("active");
-				}
-			}, $view))
-			.trigger("scroll");
-		}
-	}
-
-	/**
 	 * Swiper 3.1.7
 	 * @description  Enable Swiper Slider
 	 */
@@ -1052,7 +459,7 @@ $document.ready(function () {
 
 				if (url = $this.attr("data-slide-bg")) {
 					$this.css({
-						"background-image": "linear-gradient( rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.10)), url(" + url + ")",
+						"background-image": "linear-gradient( rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.15)), url(" + url + ")",
 						"background-size": "cover"
 					})
 				}
@@ -1063,10 +470,10 @@ $document.ready(function () {
 			.addClass("not-animated")
 			.end()
 			.swiper({
-				autoplay: s.attr('data-autoplay') ? s.attr('data-autoplay') === "false" ? undefined : s.attr('data-autoplay') : 5000,
+				autoplay: s.attr('data-autoplay') ? s.attr('data-autoplay') === "true" ? undefined : s.attr('data-autoplay') : 7000,
 				direction: s.attr('data-direction') ? s.attr('data-direction') : "horizontal",
 				effect: s.attr('data-slide-effect') ? s.attr('data-slide-effect') : "slide",
-				speed: s.attr('data-slide-speed') ? s.attr('data-slide-speed') : 600,
+				speed: s.attr('data-slide-speed') ? s.attr('data-slide-speed') : 500,
 				keyboardControl: s.attr('data-keyboard') === "true",
 				mousewheelControl: s.attr('data-mousewheel') === "true",
 				mousewheelReleaseOnEdges: s.attr('data-mousewheel-release') === "true",
@@ -1245,73 +652,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * Slick carousel
-	 * @description  Enable Slick carousel plugin
-	 */
-	if (plugins.slick.length) {
-		var i;
-		for (i = 0; i < plugins.slick.length; i++) {
-			var $slickItem = $(plugins.slick[i]);
-
-			$slickItem.slick({
-				slidesToScroll: parseInt($slickItem.attr('data-slide-to-scroll')) || 1,
-				asNavFor: $slickItem.attr('data-for') || false,
-				dots: $slickItem.attr("data-dots") == "true",
-				infinite: $slickItem.attr("data-loop") == "true",
-				focusOnSelect: true,
-				arrows: $slickItem.attr("data-arrows") == "true",
-				swipe: $slickItem.attr("data-swipe") == "true",
-				autoplay: $slickItem.attr("data-autoplay") == "true",
-				vertical: $slickItem.attr("data-vertical") == "true",
-				centerMode: $slickItem.attr("data-center-mode") == "true",
-				centerPadding: $slickItem.attr("data-center-padding") ? $slickItem.attr("data-center-padding") : '0.50',
-				mobileFirst: true,
-				responsive: [
-					{
-						breakpoint: 0,
-						settings: {
-							slidesToShow: parseInt($slickItem.attr('data-items')) || 1,
-						}
-					},
-					{
-						breakpoint: 480,
-						settings: {
-							slidesToShow: parseInt($slickItem.attr('data-xs-items')) || 1,
-						}
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: parseInt($slickItem.attr('data-sm-items')) || 1,
-						}
-					},
-					{
-						breakpoint: 992,
-						settings: {
-							slidesToShow: parseInt($slickItem.attr('data-md-items')) || 1,
-						}
-					},
-					{
-						breakpoint: 1200,
-						settings: {
-							slidesToShow: parseInt($slickItem.attr('data-lg-items')) || 1,
-						}
-					}
-				]
-			})
-			.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-				var $this = $(this),
-						childCarousel = $this.attr('data-child');
-
-				if (childCarousel) {
-					$(childCarousel + ' .slick-slide').removeClass('slick-current');
-					$(childCarousel + ' .slick-slide').eq(currentSlide).addClass('slick-current');
-				}
-			});
-		}
-	}
-
-	/**
 	 * Owl carousel
 	 * @description Enables Owl carousel plugin
 	 */
@@ -1410,85 +750,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * jQuery Count To
-	 * @description Enables Count To plugin
-	 */
-	if (plugins.counter.length) {
-		var i;
-
-		for (i = 0; i < plugins.counter.length; i++) {
-			var $counterNotAnimated = $(plugins.counter[i]).not('.animated');
-			$document
-			.on("scroll", $.proxy(function () {
-				var $this = this;
-
-				if ((!$this.hasClass("animated")) && (isScrolledIntoView($this))) {
-					$this.countTo({
-						refreshInterval: 40,
-						speed: $this.attr("data-speed") || 1000
-					});
-					$this.addClass('animated');
-				}
-			}, $counterNotAnimated))
-			.trigger("scroll");
-		}
-	}
-
-	/**
-	 * Isotope
-	 * @description Enables Isotope plugin
-	 */
-	if (plugins.isotope.length) {
-		var i, isogroup = [];
-		for (i = 0; i < plugins.isotope.length; i++) {
-			var isotopeItem = plugins.isotope[i]
-					, iso = new Isotope(isotopeItem, {
-				itemSelector: '.isotope-item',
-				layoutMode: isotopeItem.getAttribute('data-isotope-layout') ? isotopeItem.getAttribute('data-isotope-layout') : 'masonry',
-				filter: '*',
-				// masonry: {columnWidth: .42}
-			});
-
-			isogroup.push(iso);
-		}
-
-		$(window).on('load', function () {
-			setTimeout(function () {
-				var i;
-				for (i = 0; i < isogroup.length; i++) {
-					isogroup[i].element.className += " isotope--loaded";
-					isogroup[i].layout();
-				}
-			}, 600);
-		});
-
-		var resizeTimout;
-
-		$("[data-isotope-filter]").on("click", function (e) {
-			e.preventDefault();
-			var filter = $(this);
-			clearTimeout(resizeTimout);
-			filter.parents(".isotope-filters").find('.active').removeClass("active");
-			filter.addClass("active");
-			var iso = $('.isotope[data-isotope-group="' + this.getAttribute("data-isotope-group") + '"]');
-			iso.isotope({
-				itemSelector: '.isotope-item',
-				layoutMode: iso.attr('data-isotope-layout') ? iso.attr('data-isotope-layout') : 'masonry',
-				filter: this.getAttribute("data-isotope-filter") == '*' ? '*' : '[data-filter*="' + this.getAttribute("data-isotope-filter") + '"]',
-				// masonry: {columnWidth: .42}
-			});
-		}).eq(0).trigger("click")
-	}
-
-	/**
-	 * WOW
-	 * @description Enables Wow animation plugin
-	 */
-	if (isDesktop && $html.hasClass("wow-animation") && $(".wow").length) {
-		new WOW().init();
-	}
-
-	/**
 	 * Bootstrap tabs
 	 * @description Activate Bootstrap Tabs
 	 */
@@ -1502,30 +763,6 @@ $document.ready(function () {
 				$(this).tab('show');
 			});
 		}
-	}
-
-	/**
-	 * JQuery mousewheel plugin
-	 * @description  Enables jquery mousewheel plugin
-	 */
-	if (plugins.scroller.length) {
-		var i;
-		for (i = 0; i < plugins.scroller.length; i++) {
-			var scrollerItem = $(plugins.scroller[i]);
-
-			scrollerItem.mCustomScrollbar({
-				scrollInertia: 200,
-				scrollButtons: {enable: true}
-			});
-		}
-	}
-
-	/**
-	 * Socialite v2
-	 * @description  Enables Socialite v2 plugin
-	 */
-	if (plugins.socialite.length) {
-		Socialite.load();
 	}
 
 	/**
@@ -1625,43 +862,6 @@ $document.ready(function () {
 	}
 
 	/**
-	 * Stacktable
-	 * @description Enables Stacktable plugin
-	 */
-	if (plugins.stacktable.length) {
-		var i;
-		for (i = 0; i < plugins.stacktable.length; i++) {
-			var stacktableItem = $(plugins.stacktable[i]);
-			stacktableItem.stacktable();
-		}
-	}
-
-	/**
-	 * Custom Toggles
-	 */
-	if (plugins.customToggle.length) {
-		var i;
-
-		for (i = 0; i < plugins.customToggle.length; i++) {
-			var $this = $(plugins.customToggle[i]);
-
-			$this.on('click', $.proxy(function (event) {
-				event.preventDefault();
-				var $ctx = $(this);
-				$($ctx.attr('data-custom-toggle')).add(this).toggleClass('active');
-			}, $this));
-
-			if ($this.attr("data-custom-toggle-disable-on-blur") === "true") {
-				$("body").on("click", $this, function (e) {
-					if (e.target !== e.data[0] && $(e.data.attr('data-custom-toggle')).find($(e.target)).length == 0 && e.data.find($(e.target)).length == 0) {
-						$(e.data.attr('data-custom-toggle')).add(e.data[0]).removeClass('active');
-					}
-				})
-			}
-		}
-	}
-
-	/**
 	 * Magnificent image zoom
 	 */
 	if (plugins.imgZoom.length) {
@@ -1732,133 +932,9 @@ $document.ready(function () {
 		}
 	}
 
-	// Copyright Year (Evaluates correct copyright year)
-	if (plugins.copyrightYear.length) {
-		plugins.copyrightYear.text(initialDate.getFullYear());
-	}
-
-	// Google maps
-	if (plugins.maps.length) {
-		lazyInit(plugins.maps, function() {
-			var key;
-			for (var i = 0; i < plugins.maps.length; i++) {
-				if (plugins.maps[i].hasAttribute("data-key")) {
-					key = plugins.maps[i].getAttribute("data-key");
-					break;
-				}
-			}
-			$.getScript('//maps.google.com/maps/api/js?' + (key ? 'key=' + key + '&' : '') + 'sensor=false&libraries=geometry,places&v=quarterly', function () {
-				var head = document.getElementsByTagName('head')[0],
-						insertBefore = head.insertBefore;
-				head.insertBefore = function (newElement, referenceElement) {
-					if (newElement.href && newElement.href.indexOf('//fonts.googleapis.com/css?family=Roboto') !== -1 || newElement.innerHTML.indexOf('gm-style') !== -1) {
-						return;
-					}
-					insertBefore.call(head, newElement, referenceElement);
-				};
-				var geocoder = new google.maps.Geocoder;
-				for (var i = 0; i < plugins.maps.length; i++) {
-					var zoom = parseInt(plugins.maps[i].getAttribute("data-zoom"), 10) || 11;
-					var styles = plugins.maps[i].hasAttribute('data-styles') ? JSON.parse(plugins.maps[i].getAttribute("data-styles")) : [];
-					var center = plugins.maps[i].getAttribute("data-center") || "New York";
-					// Initialize map
-					var map = new google.maps.Map(plugins.maps[i].querySelectorAll(".google-map")[0], {
-						zoom: zoom,
-						styles: styles,
-						scrollwheel: false,
-						center: {lat: 0, lng: 0}
-					});
-					// Add map object to map node
-					plugins.maps[i].map = map;
-					plugins.maps[i].geocoder = geocoder;
-					plugins.maps[i].google = google;
-					// Get Center coordinates from attribute
-					getLatLngObject(center, null, plugins.maps[i], function (location, markerElement, mapElement) {
-						mapElement.map.setCenter(location);
-					});
-					// Add markers from google-map-markers array
-					var markerItems = plugins.maps[i].querySelectorAll(".google-map-markers li");
-					if (markerItems.length) {
-						var markers = [];
-						for (var j = 0; j < markerItems.length; j++) {
-							var markerElement = markerItems[j];
-							getLatLngObject(markerElement.getAttribute("data-location"), markerElement, plugins.maps[i], function (location, markerElement, mapElement) {
-								var icon = markerElement.getAttribute("data-icon") || mapElement.getAttribute("data-icon");
-								var activeIcon = markerElement.getAttribute("data-icon-active") || mapElement.getAttribute("data-icon-active");
-								var info = markerElement.getAttribute("data-description") || "";
-								var infoWindow = new google.maps.InfoWindow({
-									content: info
-								});
-								markerElement.infoWindow = infoWindow;
-								var markerData = {
-									position: location,
-									map: mapElement.map
-								}
-								if (icon) {
-									markerData.icon = icon;
-								}
-								var marker = new google.maps.Marker(markerData);
-								markerElement.gmarker = marker;
-								markers.push({markerElement: markerElement, infoWindow: infoWindow});
-								marker.isActive = false;
-								// Handle infoWindow close click
-								google.maps.event.addListener(infoWindow, 'closeclick', (function (markerElement, mapElement) {
-									var markerIcon = null;
-									markerElement.gmarker.isActive = false;
-									markerIcon = markerElement.getAttribute("data-icon") || mapElement.getAttribute("data-icon");
-									markerElement.gmarker.setIcon(markerIcon);
-								}).bind(this, markerElement, mapElement));
-								// Set marker active on Click and open infoWindow
-								google.maps.event.addListener(marker, 'click', (function (markerElement, mapElement) {
-									if (markerElement.infoWindow.getContent().length === 0) return;
-									var gMarker, currentMarker = markerElement.gmarker, currentInfoWindow;
-									for (var k = 0; k < markers.length; k++) {
-										var markerIcon;
-										if (markers[k].markerElement === markerElement) {
-											currentInfoWindow = markers[k].infoWindow;
-										}
-										gMarker = markers[k].markerElement.gmarker;
-										if (gMarker.isActive && markers[k].markerElement !== markerElement) {
-											gMarker.isActive = false;
-											markerIcon = markers[k].markerElement.getAttribute("data-icon") || mapElement.getAttribute("data-icon")
-											gMarker.setIcon(markerIcon);
-											markers[k].infoWindow.close();
-										}
-									}
-									currentMarker.isActive = !currentMarker.isActive;
-									if (currentMarker.isActive) {
-										if (markerIcon = markerElement.getAttribute("data-icon-active") || mapElement.getAttribute("data-icon-active")) {
-											currentMarker.setIcon(markerIcon);
-										}
-										currentInfoWindow.open(map, marker);
-									} else {
-										if (markerIcon = markerElement.getAttribute("data-icon") || mapElement.getAttribute("data-icon")) {
-											currentMarker.setIcon(markerIcon);
-										}
-										currentInfoWindow.close();
-									}
-								}).bind(this, markerElement, mapElement))
-							})
-						}
-					}
-				}
-			});
-		});
-	}
-
 	// Google ReCaptcha
 	if (plugins.captcha.length) {
 		$.getScript("//www.google.com/recaptcha/api.js?onload=onloadCaptchaCallback&render=explicit&hl=en");
-	}
-
-	// RD Input Label
-	if (plugins.rdInputLabel.length) {
-		plugins.rdInputLabel.RDInputLabel();
-	}
-
-	// Regula
-	if (plugins.regula.length) {
-		attachFormValidator(plugins.regula);
 	}
 
 	// MailChimp Ajax subscription
@@ -2153,30 +1229,6 @@ $document.ready(function () {
 					}, 3500);
 				}
 			});
-		}
-	}
-
-	// Material Parallax
-	if (plugins.materialParallax.length) {
-		if (!isNoviBuilder && !isIE && !isMobile) {
-			plugins.materialParallax.parallax();
-
-			// heavy pages fix
-			$window.on('load', function () {
-				setTimeout(function () {
-					$window.scroll();
-				}, 500);
-			});
-		} else {
-			for (var i = 0; i < plugins.materialParallax.length; i++) {
-				var parallax = $(plugins.materialParallax[i]),
-						imgPath = parallax.data("parallax-img");
-
-				parallax.css({
-					"background-image": 'url(' + imgPath + ')',
-					"background-size": "cover"
-				});
-			}
 		}
 	}
 

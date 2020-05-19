@@ -358,3 +358,83 @@
 .copyright .color {
 	color: #f04C36;
 }
+
+/*
+================================================
+12. Portfolio Sec
+================================================
+*/
+.portfolio-sec {
+	float: left;
+	width: 100%;
+	padding: 80px 0 0;
+}
+.portfolio-sec .title {
+	margin: 0;
+}
+.single-gallery {
+    position: relative;
+	padding:30px 0 0;
+}
+.single-gallery .gallery-image img {
+	max-width: 100%
+}
+.single-gallery .gallery-icon a {
+    background-color: rgb(8, 66, 114);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -moz-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    -o-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-transition: all .3s ease-out 0s;
+    -moz-transition: all .3s ease-out 0s;
+    -ms-transition: all .3s ease-out 0s;
+    -o-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .single-gallery .gallery-icon a {
+        width: 80px;
+        height: 80px
+    }
+}
+.single-gallery .gallery-icon a span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+    .single-gallery .gallery-icon a span {
+        width: 30px;
+        height: 30px
+    }
+}
+.single-gallery .gallery-icon a span::after {
+	position: absolute;
+	font-family: FontAwesome;
+	content: '\f065';
+	color: white;
+	font-size: 30px;
+    top: 0%;
+    left: 15%;
+}
+
+.single-gallery:hover .gallery-icon a {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -moz-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    -o-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1)
+}

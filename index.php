@@ -11,10 +11,12 @@ include("layouts/header.php");
           <div class="range section-100-vh range-xs-middle range-xs-center range-md-right">
             <div class="col-md-6 col-sm-9 postfix-md-right-90 postfix-xl-right-0" data-caption-animate="fadeInDown"
               data-caption-delay="200">
-              <h1 style="color: #fff !important;">Titulo principal 1</h1>
-              <p class="h6 offset-top-40" style="color: #fff !important;">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h1 style="color: #fff !important;">Fabricación de productos de metal no clasificados. </h1>
+              <p class="h6 offset-top-40" style="color: #fff !important;">Somos líderes en la fabricación de productos
+                metálicos para uso estructural, industrial, comercial y residencial. Brindamos todo tipo de soluciones
+                en hierro negro, acero inoxidable, acero al carbón y aluminio. Nos especializamos en soldadura
+                eléctrica, Tic, Mig y oxiacetilénico y en todo tipo de montajes industriales, comerciales y
+                residenciales. </p>
               <div class="group"><a class="btn btn-white btn-form" href="servicios">Nuestros servicios</a><a
                   class="btn btn-default btn-form" href="contactanos" data-toggle="modal"
                   data-target="#modalContact">Contáctanos</a></div>
@@ -29,10 +31,13 @@ include("layouts/header.php");
           <div class="range section-100-vh range-xs-middle range-xs-center range-md-right">
             <div class="col-md-6 col-sm-9 postfix-md-right-90 postfix-xl-right-0" data-caption-animate="fadeInDown"
               data-caption-delay="200">
-              <h1 style="color: #fff !important;">Titulo principal 2</h1>
-              <p class="h6 offset-top-40" style="color: #fff !important;">Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <h1 style="color: #fff !important;">Mantenimientos Industriales, soluciones eléctricas y aire
+                acondicionado. </h1>
+              <p class="h6 offset-top-40" style="color: #fff !important;">Somos especialistas en mantenimientos
+                industriales preventivos y correctivos. Contamos con alta gama de servicios a la orden de la industria
+                papelera, alimenticia, plásticos, pinturas y más. Ofrecemos montajes y mantenimientos de equipos de aire
+                acondicionado industrial, comercial y residencial. Un equipo de especialistas multidisciplinarios y más
+                de 12 años de experiencia nos respaldan.</p>
               <div class="group"><a class="btn btn-white btn-form" href="servicios">Nuestros servicios</a><a
                   class="btn btn-default btn-form" href="contactanos" data-toggle="modal"
                   data-target="#modalContact">Contáctanos</a></div>
@@ -93,8 +98,8 @@ include("layouts/header.php");
             (válvulas, válvulas check, transmisores, entre otros). </li>
         </ul>
       </div>
-      <div class="col-sm-12 col-lg-3 ml-lg-5 mr-lg-5 offset-top-50 offset-sm-top-0"><span
-          class="flaticon-wheel-barrow" style="color: #82FFF5"></span>
+      <div class="col-sm-12 col-lg-3 ml-lg-5 mr-lg-5 offset-top-50 offset-sm-top-0"><span class="flaticon-wheel-barrow"
+          style="color: #82FFF5"></span>
         <h5 class="offset-top-15 offset-lg-top-25"><a href="#" style="color: #82FFF5">Obra Civil </a></h5>
         <ul class="text-gray-lighter text-justify">
           <li>Elaboración y modificación de planos</li>
@@ -103,8 +108,8 @@ include("layouts/header.php");
           <li>Trabajos con tabla yeso y fibro cemento. </li>
         </ul>
       </div>
-      <div class="col-sm-12 col-lg-3 ml-lg-5 offset-top-50 offset-lg-top-0"><span
-          class="flaticon-global" style="color: #82FFF5"></span>
+      <div class="col-sm-12 col-lg-3 ml-lg-5 offset-top-50 offset-lg-top-0"><span class="flaticon-global"
+          style="color: #82FFF5"></span>
         <h5 class="offset-top-15 offset-lg-top-25"><a href="#" style="color: #82FFF5"> Experiencia en Out-sourcing: </a>
         </h5>
         <p class="text-gray-lighter text-justify">Contamos con experiencia para realizar trabajos bajo el sistema
@@ -127,66 +132,66 @@ include("layouts/header.php");
   </div>
   <div class="container mt-5 mb-5">
     <div class="row spacing-30">
-    <div class="col-lg-4 col-md-6">
-          <div class="single-service-sec">
-            <div class="single-service-sec-img"> <img src="images/service1.png" alt="" class="card-img-top"> </div>
-            <div class="service-details">
-              <div class="service-body">
-                <h3><a href="#">Fabricación de productos de metal.</a></h3>
-              </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-service-sec">
+          <div class="single-service-sec-img"> <img src="images/service1.png" alt="" class="card-img-top"> </div>
+          <div class="service-details">
+            <div class="service-body">
+              <h3><a href="#">Fabricación de productos de metal.</a></h3>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service-sec">
-            <div class="single-service-sec-img"> <img src="images/service2.jpg" alt="" class="card-img-top"> </div>
-            <div class="service-details">
-              <div class="service-body">
-                <h3><a href="#">Montajes, Desmontajes Y Mantenimiento Industrial.</a></h3>
-              </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-service-sec">
+          <div class="single-service-sec-img"> <img src="images/service2.jpg" alt="" class="card-img-top"> </div>
+          <div class="service-details">
+            <div class="service-body">
+              <h3><a href="#">Montajes, Desmontajes Y Mantenimiento Industrial.</a></h3>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service-sec">
-            <div class="single-service-sec-img"> <img src="images/service3.png" alt="" class="card-img-top"> </div>
-            <div class="service-details">
-              <div class="service-body">
-                <h3><a href="#">Fabricación Y Montaje De Tuberías.</a></h3>
-              </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-service-sec">
+          <div class="single-service-sec-img"> <img src="images/service3.png" alt="" class="card-img-top"> </div>
+          <div class="service-details">
+            <div class="service-body">
+              <h3><a href="#">Fabricación Y Montaje De Tuberías.</a></h3>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service-sec">
-            <div class="single-service-sec-img"> <img src="images/service4.png" alt="" class="card-img-top"> </div>
-            <div class="service-details">
-              <div class="service-body">
-                <h3><a href="#">Montaje Y Mantenimiento De Calderas.</a></h3>
-              </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-service-sec">
+          <div class="single-service-sec-img"> <img src="images/service4.png" alt="" class="card-img-top"> </div>
+          <div class="service-details">
+            <div class="service-body">
+              <h3><a href="#">Montaje Y Mantenimiento De Calderas.</a></h3>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service-sec">
-            <div class="single-service-sec-img"> <img src="images/service5.jpg" alt="" class="card-img-top"> </div>
-            <div class="service-details">
-              <div class="service-body">
-                <h3><a href="#">Obra Civil.</a></h3>
-              </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-service-sec">
+          <div class="single-service-sec-img"> <img src="images/service5.jpg" alt="" class="card-img-top"> </div>
+          <div class="service-details">
+            <div class="service-body">
+              <h3><a href="#">Obra Civil.</a></h3>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-service-sec">
-            <div class="single-service-sec-img"> <img src="images/service6.jpg" alt="" class="card-img-top"> </div>
-            <div class="service-details">
-              <div class="service-body">
-                <h3><a href="#">Aplicación De Pinturas.</a></h3>
-              </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="single-service-sec">
+          <div class="single-service-sec-img"> <img src="images/service6.jpg" alt="" class="card-img-top"> </div>
+          <div class="service-details">
+            <div class="service-body">
+              <h3><a href="#">Aplicación De Pinturas.</a></h3>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
   <div class="container section-lg-top-25">
@@ -284,12 +289,14 @@ include("layouts/header.php");
         <div class="owl-item"><img class="img-responsive" src="images/sherwin-logo.png" alt="" width="164"
             height="90" />
         </div>
-        <div class="owl-item"><img class="img-responsive" src="images/indufoam-logo.jpg" alt="" width="124"
+        <div class="owl-item"><img class="img-responsive" src="images/american-logo.jpeg" alt="" width="124"
             height="90" />
         </div>
         <div class="owl-item"><img class="img-responsive" src="images/irex-logo.jpg" alt="" width="133" height="90" />
         </div>
         <div class="owl-item"><img class="img-responsive" src="images/diana-logo.png" alt="" width="126" height="90" />
+        </div>
+        <div class="owl-item"><img class="img-responsive" src="images/logo-avicola.png" alt="" width="235" height="104" />
         </div>
         <div class="owl-item"><img class="img-responsive" src="images/amcor-logo.png" alt="" width="164" height="90" />
         </div>
