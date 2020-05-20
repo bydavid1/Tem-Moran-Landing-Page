@@ -17,31 +17,31 @@ include("layouts/header.php");
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="name">Nombre :</label>
-                  <input type="text" class="input-field" name="name" placeholder="Ingrese su nombre completo" required>
+                  <input type="text" class="input-field" name="name" value="Byron" placeholder="Ingrese su nombre completo" required>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="email">Email :</label>
-                  <input type="email" class="input-field" name="email" placeholder="Ingrese su correo" required>
+                  <input type="email" class="input-field" name="email" value="bm@gmail.com" placeholder="Ingrese su correo" required>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="subjict">Asunto :</label>
-                  <input type="text" class="input-field" name="subject" placeholder="Ingrese su asunto" required>
+                  <input type="text" class="input-field" name="subject" value="b,@sasa.com" placeholder="Ingrese su asunto" required>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="phone">Telefono :</label>
-                  <input type="text" class="input-field" name="phone" placeholder="Ingrese su numero de telefono">
+                  <input type="text" class="input-field" name="phone" value="556555" placeholder="Ingrese su numero de telefono">
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="form-group button-area">
                   <label for="message">Mensaje :</label>
-                  <textarea name="message" class="input-field textarea" placeholder="Ingrese su mensaje" required></textarea>
+                  <textarea name="message" class="input-field textarea" placeholder="Ingrese su mensaje" required>sasasas</textarea>
                 </div>
               </div>
               <div class="col-lg-12">
@@ -113,40 +113,51 @@ include("layouts/footer.php");
 
 <script>
 		$('#contact-form').submit(function () {
-      output = $("#form-output-global");
-		  $("#send").prop('disabled', true);
-		  $("#send").button('loading');
-		  $('#result').html('');
-		  $.ajax({
-		    type: $(this).attr('method'),
-		    url: $(this).attr('action'),
-		    data: $(this).serialize(),
-		    dataType: 'json',
-		    success: function (response) {
-		      if (response.success == true) {
-            output.addClass("active");
-            output.html('<p><span class="fa-check"></span><span>' + response.message + '</span></p>')
+		output = $("#form-output-global");
+		$("#send").prop('disabled', true);
+		$("#send").button('loading');
+		$('#result').html('');
+		$.ajax({
+		type: $(this).attr('method'),
+		url: $(this).attr('action'),
+		data: $(this).serialize(),
+		dataType: 'json',
+		success: function (response) {
+		if (response.success == true) {
+		output.addClass("active");
+		output.html('<p><span class="fa-check"></span><span>' + response.message + '</span></p>')
 
-            setTimeout(function () {
-											output.removeClass("active");
-										}, 3500);
+		setTimeout(function () {
+		output.removeClass("active");
+		}, 3500);
 
-		        $("#send").button('reset');
-		        $("#send").prop('disabled', false);
-		        $('#covid-form')[0].reset();
-		      } else {
-            output.addClass("active");
-            output.html('<p><span class="fa-warning"></span><span>' + response.message + '</span></p>')
-            setTimeout(function () {
-											output.removeClass("active");
-										}, 3500);
+		$("#send").button('reset');
+		$("#send").prop('disabled', false);
+		$('#covid-form')[0].reset();
+		} else {
+		output.addClass("active");
+		output.html('<p><span class="fa-warning"></span><span>' + response.message + '</span></p>')
+		setTimeout(function () {
+		output.removeClass("active");
+		}, 3500);
 
-		        $("#send").button('reset');
-		        $("#send").prop('disabled', false);
-		      }
-		    }
-		  })
+		$("#send").button('reset');
+		$("#send").prop('disabled', false);
+		}
+		},
+		error: function (xhr, textStatus, errorMessage) {
+		output.addClass("active");
+		output.html('<p><span class="fa-warning"></span><span>' + xhr.responseText + '</span></p>')
+		setTimeout(function () {
+		output.removeClass("active");
+		}, 3500);
 
-		  return false;
+		$("#send").button('reset');
+		$("#send").prop('disabled', false);
+		}
+
+		})
+
+		return false;
 		});
 </script>

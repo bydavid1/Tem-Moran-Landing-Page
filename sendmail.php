@@ -1,12 +1,13 @@
 <?php
 error_reporting(E_ALL);
-ini_set("display_errors", 1);
+ini_set("error_reporting", E_ALL);
 
 $valid['success'] = array(
-    'success' => false,
-    'message' => array()
+  'success' => false,
+  'message' => array()
 );
 
+try {
 $nombre = $_POST['name'];
 $email = $_POST['email'];
 $asunto = $_POST['subject'];
@@ -50,6 +51,12 @@ if(mail($to, $subjetc, $messsage, $headers)){
     $valid['message'] = "Ocurrió un error, intentelo mas tarde";  
 
     echo json_encode($valid);
+}
+} catch (Throwable $th) {
+  
+  http_response_code(500);
+  $valid['success'] = false;
+  $valid['message'] = "Error del servidor: " . $th;  
 }
 
 ?>

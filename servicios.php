@@ -183,9 +183,6 @@
     <div class="container section-top-110">
         <div class="title">
             <h2>Nuestra <span>Galería</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar lacus at feugiat iaculis.
-                Suspendisse at viverra mauris, sit amet facilisis lectus. Pellentesque mattis auctor quam, et feugiat
-                elit volutpat vel.</p>
         </div>
     </div>
     <div class="container">
@@ -193,7 +190,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
                     <div class="gallery-image"> <img src="images/g-1.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-icon"> <a class="image-popup" data-size="1280x960" data-photo-swipe-item
                             href="images/g-1.jpeg"> <span></span> </a>
                     </div>
                 </div>
@@ -201,7 +198,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
                     <div class="gallery-image"> <img src="images/g-2.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
                             href="images/g-2.jpeg"> <span></span> </a>
                     </div>
                 </div>
@@ -209,48 +206,48 @@
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
                     <div class="gallery-image"> <img src="images/g-3.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
-                            href="images/g-2.jpeg"> <span></span> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-4.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
                             href="images/g-3.jpeg"> <span></span> </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-5.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-image"> <img src="images/g-4.jpeg" alt="gallery"> </div>
+                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
                             href="images/g-4.jpeg"> <span></span> </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-6.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-image"> <img src="images/g-5.jpeg" alt="gallery"> </div>
+                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
                             href="images/g-5.jpeg"> <span></span> </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-7.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-image"> <img src="images/g-6.jpeg" alt="gallery"> </div>
+                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
                             href="images/g-6.jpeg"> <span></span> </a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-lg-3">
                 <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-8.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1000x667" data-photo-swipe-item
+                    <div class="gallery-image"> <img src="images/g-7.jpeg" alt="gallery"> </div>
+                    <div class="gallery-icon"> <a class="image-popup" data-size="1280x960" data-photo-swipe-item
                             href="images/g-7.jpeg"> <span></span> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="single-gallery">
+                    <div class="gallery-image"> <img src="images/g-8.jpeg" alt="gallery"> </div>
+                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
+                            href="images/g-8.jpeg"> <span></span> </a>
                     </div>
                 </div>
             </div>
