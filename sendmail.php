@@ -33,14 +33,12 @@ $messsage = '
 </html>
 ';
 
-// HTML Message
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
 // Aditional headers
-$headers .= 'To: Tem Moran admins<contact@temmoran.com>'. "\r\n";
+$headers = 'From: ventas@temmoran.com'. "\r\n" .
+'MIME-Version: 1.0' . "\r\n" .
+'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-// Enviarlo
+// Send
 if(mail($to, $subjetc, $messsage, $headers)){
     $valid['success'] = true;
     $valid['message'] = "Mensaje enviado";  
