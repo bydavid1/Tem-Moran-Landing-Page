@@ -30,8 +30,7 @@ $messsage = '
   <p>' .$mensaje. '</p>
   <b>Contacto: </b> '. $telefono .'
 </body>
-</html>
-';
+</html>';
 
 // Aditional headers
 $headers = 'From: ventas@temmoran.com'. "\r\n" .
