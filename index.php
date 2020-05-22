@@ -5,7 +5,7 @@ include("layouts/header.php");
 <!-- Slider-->
 <div class="swiper-container swiper-slider swiper-secondary" data-height="100vh" data-min-height="300px">
   <div class="swiper-wrapper text-md-left">
-    <div class="swiper-slide" data-slide-bg="images/service5-mini.jpg" style="">
+    <div class="swiper-slide" data-slide-bg="images/slider1.jpeg" style="">
       <div class="swiper-slide-caption">
         <div class="container">
           <div class="range section-100-vh range-xs-middle range-xs-center range-md-right">
@@ -25,11 +25,11 @@ include("layouts/header.php");
         </div>
       </div>
     </div>
-    <div class="swiper-slide" data-slide-bg="images/slider2.jpeg" style="background-position: bottom;">
+    <div class="swiper-slide" data-slide-bg="images/slider2.jpg" style="background-position: bottom;">
       <div class="swiper-slide-caption">
         <div class="shell">
           <div class="range section-100-vh range-xs-middle range-xs-center range-md-right">
-            <div class="col-md-6 col-sm-9 postfix-md-right-90 postfix-xl-right-0" data-caption-animate="fadeInDown"
+            <div class="col-md-6 col-sm-9" data-caption-animate="fadeInDown"
               data-caption-delay="200">
               <h1 style="color: #fff !important;">Mantenimientos Industriales, soluciones eléctricas y aire
                 acondicionado. </h1>
@@ -314,12 +314,6 @@ include("layouts/header.php");
         </div>
         <div class="owl-item"><img class="img-responsive" src="images/lacabaña-logo.png" alt="" width="164"
             height="90" />
-        </div>
-      </div>
-      <div class="owl-custom-navigation">
-        <div class="owl-nav">
-          <div class="owl-prev" data-owl-prev>Anterior</div>
-          <div class="owl-next" data-owl-next>Siguiente</div>
         </div>
       </div>
     </div>

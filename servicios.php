@@ -186,88 +186,97 @@
         </div>
     </div>
     <div class="container">
-        <div class="row" data-photo-swipe-gallery>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-1.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1280x960" data-photo-swipe-item
-                            href="images/g-1.jpeg"> <span></span> </a>
+        <div class="photoswipe-wrapper">
+            <div class="row spacing-30">
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="#" data-type="video"
+                            data-video='<div class="wrapper"><div class="video-wrapper"><iframe class="pswp__video" width="960" height="640" src="images/video.mp4" frameborder="0" allowfullscreen></iframe></div></div>'>
+                            <img src="images/plch-video.png" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-2.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
-                            href="images/g-2.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-2.jpeg">
+                        <span></span>
+                            <img src="images/g-2.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-3.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
-                            href="images/g-3.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-3.jpeg">
+                        <span></span>
+                            <img src="images/g-3.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-4.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
-                            href="images/g-4.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-4.jpeg">
+                            <img src="images/g-4.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-5.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
-                            href="images/g-5.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-5.jpeg">
+                            <img src="images/g-5.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-6.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
-                            href="images/g-6.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-6.jpeg">
+                            <img src="images/g-6.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-7.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="1280x960" data-photo-swipe-item
-                            href="images/g-7.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-7.jpeg">
+                            <img src="images/g-7.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-3">
-                <div class="single-gallery">
-                    <div class="gallery-image"> <img src="images/g-8.jpeg" alt="gallery"> </div>
-                    <div class="gallery-icon"> <a class="image-popup" data-size="960x1280" data-photo-swipe-item
-                            href="images/g-8.jpeg"> <span></span> </a>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-8.jpeg">
+                            <img src="images/g-8.jpeg" alt="Image description" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-9.jpeg">
+                            <img src="images/g-9.jpeg" alt="Image description" class="img-responsive">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="photoswipe-item">
+                        <a href="images/g-10.jpeg">
+                            <img src="images/g-10.jpeg" alt="Image description" class="img-responsive">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
+    <!-- Background of PhotoSwipe.
+    It's a separate element as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
 
     <!-- Slides wrapper with overflow:hidden. -->
     <div class="pswp__scroll-wrap">
 
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
         <div class="pswp__container">
             <div class="pswp__item"></div>
             <div class="pswp__item"></div>
@@ -276,19 +285,12 @@
 
         <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
         <div class="pswp__ui pswp__ui--hidden">
-
             <div class="pswp__top-bar">
-
                 <!--  Controls are self-explanatory. Order can be changed. -->
-
                 <div class="pswp__counter"></div>
-
                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
                 <button class="pswp__button pswp__button--share" title="Share"></button>
-
                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
                 <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                 <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
@@ -301,25 +303,18 @@
                     </div>
                 </div>
             </div>
-
             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                 <div class="pswp__share-tooltip"></div>
             </div>
-
             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
             </button>
-
             <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
             </button>
-
             <div class="pswp__caption">
                 <div class="pswp__caption__center"></div>
             </div>
-
         </div>
-
     </div>
-
 </div>
 <?php
   include("layouts/footer.php")

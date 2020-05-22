@@ -4,56 +4,56 @@
 "use strict";
 
 var userAgent = navigator.userAgent.toLowerCase(),
-		initialDate = new Date(),
+	initialDate = new Date(),
 
-		$document = $(document),
-		$window = $(window),
-		$html = $("html"),
+	$document = $(document),
+	$window = $(window),
+	$html = $("html"),
 
-		isDesktop = $html.hasClass("desktop"),
-		isIE = userAgent.indexOf("msie") != -1 ? parseInt(userAgent.split("msie")[1]) : userAgent.indexOf("trident") != -1 ? 11 : userAgent.indexOf("edge") != -1 ? 12 : false,
-		isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-		isTouch = "ontouchstart" in window,
-		onloadCaptchaCallback,
-		isNoviBuilder = false,
+	isDesktop = $html.hasClass("desktop"),
+	isIE = userAgent.indexOf("msie") != -1 ? parseInt(userAgent.split("msie")[1]) : userAgent.indexOf("trident") != -1 ? 11 : userAgent.indexOf("edge") != -1 ? 12 : false,
+	isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+	isTouch = "ontouchstart" in window,
+	onloadCaptchaCallback,
+	isNoviBuilder = false,
 
-		plugins = {
-			pageLoader: $(".page-loader"),
-			pointerEvents: isIE < 11 ? "js/pointer-events.min.js" : false,
-			smoothScroll: $html.hasClass("use--smoothscroll") ? "js/smoothscroll.min.js" : false,
-			bootstrapTooltip: $("[data-toggle='tooltip']"),
-			bootstrapTabs: $(".tabs"),
-			bootstrapModalDialog: $('.modal'),
-			rdAudioPlayer: $(".rd-audio"),
-			rdVideoPlayer: $(".rd-video-player"),
-			responsiveTabs: $(".responsive-tabs"),
-			rdNavbar: $(".rd-navbar"),
-			rdVideoBG: $(".rd-video"),
-			rdRange: $('.rd-range'),
-			textRotator: $(".text-rotator"),
-			owl: $(".owl-carousel"),
-			swiper: $(".swiper-slider"),
-			stacktable: $("[data-responsive=true]"),
-			bootstrapDateTimePicker: $("[data-time-picker]"),
-			customWaypoints: $('[data-custom-scroll-to]'),
-			photoSwipeGallery: $("[data-photo-swipe-item]"),
-			circleProgress: $(".progress-bar-circle"),
-			stepper: $("input[type='number']"),
-			radio: $("input[type='radio']"),
-			checkbox: $("input[type='checkbox']"),
-			customToggle: $("[data-custom-toggle]"),
-			searchResults: $('.rd-search-results'),
-			imgZoom: $('[mag-thumb]'),
-			copyrightYear: $(".copyright-year"),
-			maps: $('.google-map-container'),
-			rdMailForm: $('.rd-mailform'),
-			rdInputLabel: $('.form-label'),
-			regula: $('[data-constraints]'),
-			captcha: $('.recaptcha'),
-			campaignMonitor: $('.campaign-mailform'),
-			mailchimp: $('.mailchimp-mailform'),
-			materialParallax: $('.parallax-container'),
-		};
+	plugins = {
+		pageLoader: $(".page-loader"),
+		pointerEvents: isIE < 11 ? "js/pointer-events.min.js" : false,
+		smoothScroll: $html.hasClass("use--smoothscroll") ? "js/smoothscroll.min.js" : false,
+		bootstrapTooltip: $("[data-toggle='tooltip']"),
+		bootstrapTabs: $(".tabs"),
+		bootstrapModalDialog: $('.modal'),
+		rdAudioPlayer: $(".rd-audio"),
+		rdVideoPlayer: $(".rd-video-player"),
+		responsiveTabs: $(".responsive-tabs"),
+		rdNavbar: $(".rd-navbar"),
+		rdVideoBG: $(".rd-video"),
+		rdRange: $('.rd-range'),
+		textRotator: $(".text-rotator"),
+		owl: $(".owl-carousel"),
+		swiper: $(".swiper-slider"),
+		stacktable: $("[data-responsive=true]"),
+		bootstrapDateTimePicker: $("[data-time-picker]"),
+		customWaypoints: $('[data-custom-scroll-to]'),
+		photoSwipeGallery: $("[data-photo-swipe-item]"),
+		circleProgress: $(".progress-bar-circle"),
+		stepper: $("input[type='number']"),
+		radio: $("input[type='radio']"),
+		checkbox: $("input[type='checkbox']"),
+		customToggle: $("[data-custom-toggle]"),
+		searchResults: $('.rd-search-results'),
+		imgZoom: $('[mag-thumb]'),
+		copyrightYear: $(".copyright-year"),
+		maps: $('.google-map-container'),
+		rdMailForm: $('.rd-mailform'),
+		rdInputLabel: $('.form-label'),
+		regula: $('[data-constraints]'),
+		captcha: $('.recaptcha'),
+		campaignMonitor: $('.campaign-mailform'),
+		mailchimp: $('.mailchimp-mailform'),
+		materialParallax: $('.parallax-container'),
+	};
 
 /**
  * Initialize All Scripts
@@ -71,26 +71,29 @@ $document.ready(function () {
 		regula.custom({
 			name: 'PhoneNumber',
 			defaultMessage: 'Invalid phone number format',
-			validator: function() {
-				if ( this.value === '' ) return true;
-				else return /^(\+\d)?[0-9\-\(\) ]{5,}$/i.test( this.value );
+			validator: function () {
+				if (this.value === '') return true;
+				else return /^(\+\d)?[0-9\-\(\) ]{5,}$/i.test(this.value);
 			}
 		});
 
 		for (var i = 0; i < elements.length; i++) {
-			var o = $(elements[i]), v;
+			var o = $(elements[i]),
+				v;
 			o.addClass("form-control-has-validation").after("<span class='form-validation'></span>");
 			v = o.parent().find(".form-validation");
 			if (v.is(":last-child")) o.addClass("form-control-last-child");
 		}
 
 		elements.on('input change propertychange blur', function (e) {
-			var $this = $(this), results;
+			var $this = $(this),
+				results;
 
-			if (e.type !== "blur") if (!$this.parent().hasClass("has-error")) return;
+			if (e.type !== "blur")
+				if (!$this.parent().hasClass("has-error")) return;
 			if ($this.parents('.rd-mailform').hasClass('success')) return;
 
-			if (( results = $this.regula('validate') ).length) {
+			if ((results = $this.regula('validate')).length) {
 				for (i = 0; i < results.length; i++) {
 					$this.siblings(".form-validation").text(results[i].message).parent().addClass("has-error");
 				}
@@ -99,8 +102,7 @@ $document.ready(function () {
 			}
 		}).regula('bind');
 
-		var regularConstraintsMessages = [
-			{
+		var regularConstraintsMessages = [{
 				type: regula.Constraint.Required,
 				newMessage: "The text field is required."
 			},
@@ -173,25 +175,25 @@ $document.ready(function () {
 
 		if (captchaToken.length === 0) {
 			captcha
-			.siblings('.form-validation')
-			.html('Please, prove that you are not robot.')
-			.addClass('active');
+				.siblings('.form-validation')
+				.html('Please, prove that you are not robot.')
+				.addClass('active');
 			captcha
-			.closest('.form-wrap')
-			.addClass('has-error');
+				.closest('.form-wrap')
+				.addClass('has-error');
 
 			captcha.on('propertychange', function () {
 				var $this = $(this),
-						captchaToken = $this.find('.g-recaptcha-response').val();
+					captchaToken = $this.find('.g-recaptcha-response').val();
 
 				if (captchaToken.length > 0) {
 					$this
-					.closest('.form-wrap')
-					.removeClass('has-error');
+						.closest('.form-wrap')
+						.removeClass('has-error');
 					$this
-					.siblings('.form-validation')
-					.removeClass('active')
-					.html('');
+						.siblings('.form-validation')
+						.removeClass('active')
+						.html('');
 					$this.off('propertychange');
 				}
 			});
@@ -210,15 +212,14 @@ $document.ready(function () {
 			var $capthcaItem = $(plugins.captcha[i]);
 
 			grecaptcha.render(
-					$capthcaItem.attr('id'),
-					{
-						sitekey: $capthcaItem.attr('data-sitekey'),
-						size: $capthcaItem.attr('data-size') ? $capthcaItem.attr('data-size') : 'normal',
-						theme: $capthcaItem.attr('data-theme') ? $capthcaItem.attr('data-theme') : 'light',
-						callback: function (e) {
-							$('.recaptcha').trigger('propertychange');
-						}
+				$capthcaItem.attr('id'), {
+					sitekey: $capthcaItem.attr('data-sitekey'),
+					size: $capthcaItem.attr('data-size') ? $capthcaItem.attr('data-size') : 'normal',
+					theme: $capthcaItem.attr('data-theme') ? $capthcaItem.attr('data-theme') : 'light',
+					callback: function (e) {
+						$('.recaptcha').trigger('propertychange');
 					}
+				}
 			);
 			$capthcaItem.after("<span class='form-validation'></span>");
 		}
@@ -227,16 +228,16 @@ $document.ready(function () {
 	/**
 	 * LazyInit
 	 */
-	function lazyInit( element, func ) {
+	function lazyInit(element, func) {
 		var handler = function () {
-			if ( ( !element.hasClass( 'lazy-loaded' ) && ( isScrolledIntoView( element ) ) ) ) {
+			if ((!element.hasClass('lazy-loaded') && (isScrolledIntoView(element)))) {
 				func.call();
-				element.addClass( 'lazy-loaded' );
+				element.addClass('lazy-loaded');
 			}
 		};
 
 		handler();
-		$window.on( 'scroll', handler );
+		$window.on('scroll', handler);
 	}
 
 	/**
@@ -245,7 +246,7 @@ $document.ready(function () {
 	 */
 	function getSwiperHeight(object, attr) {
 		var val = object.attr("data-" + attr),
-				dim;
+			dim;
 
 		if (!val) {
 			return undefined;
@@ -273,8 +274,8 @@ $document.ready(function () {
 	 */
 	function toggleSwiperInnerVideos(swiper) {
 		var prevSlide = $(swiper.slides[swiper.previousIndex]),
-				nextSlide = $(swiper.slides[swiper.activeIndex]),
-				videos;
+			nextSlide = $(swiper.slides[swiper.activeIndex]),
+			videos;
 
 		prevSlide.find("video").each(function () {
 			this.pause();
@@ -292,31 +293,31 @@ $document.ready(function () {
 	 */
 	function toggleSwiperCaptionAnimation(swiper) {
 		var prevSlide = $(swiper.container),
-				nextSlide = $(swiper.slides[swiper.activeIndex]);
+			nextSlide = $(swiper.slides[swiper.activeIndex]);
 
 		prevSlide
-		.find("[data-caption-animate]")
-		.each(function () {
-			var $this = $(this);
-			$this
-			.removeClass("animated")
-			.removeClass($this.attr("data-caption-animate"))
-			.addClass("not-animated");
-		});
+			.find("[data-caption-animate]")
+			.each(function () {
+				var $this = $(this);
+				$this
+					.removeClass("animated")
+					.removeClass($this.attr("data-caption-animate"))
+					.addClass("not-animated");
+			});
 
 		nextSlide
-		.find("[data-caption-animate]")
-		.each(function () {
-			var $this = $(this),
+			.find("[data-caption-animate]")
+			.each(function () {
+				var $this = $(this),
 					delay = $this.attr("data-caption-delay");
 
-			setTimeout(function () {
-				$this
-				.removeClass("not-animated")
-				.addClass($this.attr("data-caption-animate"))
-				.addClass("animated");
-			}, delay ? parseInt(delay) : 0);
-		});
+				setTimeout(function () {
+					$this
+						.removeClass("not-animated")
+						.addClass($this.attr("data-caption-animate"))
+						.addClass("animated");
+				}, delay ? parseInt(delay) : 0);
+			});
 	}
 
 	/**
@@ -371,10 +372,10 @@ $document.ready(function () {
 		if (isIE < 11) {
 			if (plugins.pointerEvents) {
 				$.getScript(plugins.pointerEvents)
-				.done(function () {
-					$html.addClass("ie-10");
-					PointerEventsPolyfill.initialize({});
-				});
+					.done(function () {
+						$html.addClass("ie-10");
+						PointerEventsPolyfill.initialize({});
+					});
 			}
 		}
 
@@ -446,85 +447,86 @@ $document.ready(function () {
 		for (i = 0; i < plugins.swiper.length; i++) {
 			var s = $(plugins.swiper[i]);
 			var pag = s.find(".swiper-pagination"),
-					next = s.find(".swiper-button-next"),
-					prev = s.find(".swiper-button-prev"),
-					bar = s.find(".swiper-scrollbar"),
-					parallax = s.parents('.rd-parallax').length,
-					swiperSlide = s.find(".swiper-slide");
+				next = s.find(".swiper-button-next"),
+				prev = s.find(".swiper-button-prev"),
+				bar = s.find(".swiper-scrollbar"),
+				parallax = s.parents('.rd-parallax').length,
+				swiperSlide = s.find(".swiper-slide");
 
 			for (j = 0; j < swiperSlide.length; j++) {
 				var $this = $(swiperSlide[j]),
-						url;
+					url;
 
 				if (url = $this.attr("data-slide-bg")) {
 					$this.css({
-						"background-image": "linear-gradient( rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.15)), url(" + url + ")",
+						"background-color" : "rgba(192,192,192,1);",
+						"background-image": "url(" + url + ")",
 						"background-size": "cover"
 					})
 				}
 			}
 
 			swiperSlide.end()
-			.find("[data-caption-animate]")
-			.addClass("not-animated")
-			.end()
-			.swiper({
-				autoplay: s.attr('data-autoplay') ? s.attr('data-autoplay') === "true" ? undefined : s.attr('data-autoplay') : 7000,
-				direction: s.attr('data-direction') ? s.attr('data-direction') : "horizontal",
-				effect: s.attr('data-slide-effect') ? s.attr('data-slide-effect') : "slide",
-				speed: s.attr('data-slide-speed') ? s.attr('data-slide-speed') : 500,
-				keyboardControl: s.attr('data-keyboard') === "true",
-				mousewheelControl: s.attr('data-mousewheel') === "true",
-				mousewheelReleaseOnEdges: s.attr('data-mousewheel-release') === "true",
-				nextButton: next.length ? next.get(0) : null,
-				prevButton: prev.length ? prev.get(0) : null,
-				pagination: pag.length ? pag.get(0) : null,
-				paginationClickable: pag.length ? pag.attr("data-clickable") !== "false" : false,
-				paginationBulletRender: pag.length ? pag.attr("data-index-bullet") === "true" ? function (index, className) {
-					return '<span class="' + className + '">' + (index + 1) + '</span>';
-				} : null : null,
-				scrollbar: bar.length ? bar.get(0) : null,
-				scrollbarDraggable: bar.length ? bar.attr("data-draggable") !== "false" : true,
-				scrollbarHide: bar.length ? bar.attr("data-draggable") === "false" : false,
-				loop: s.attr('data-loop') !== "false",
-				simulateTouch: s.attr('data-simulate-touch') ? s.attr('data-simulate-touch') === "true" : false,
-				onTransitionStart: function (swiper) {
-					toggleSwiperInnerVideos(swiper);
-				},
-				onTransitionEnd: function (swiper) {
-					toggleSwiperCaptionAnimation(swiper);
-				},
-				onInit: function (swiper) {
-					toggleSwiperInnerVideos(swiper);
-					toggleSwiperCaptionAnimation(swiper);
+				.find("[data-caption-animate]")
+				.addClass("not-animated")
+				.end()
+				.swiper({
+					autoplay: s.attr('data-autoplay') ? s.attr('data-autoplay') === "true" ? undefined : s.attr('data-autoplay') : 7000,
+					direction: s.attr('data-direction') ? s.attr('data-direction') : "horizontal",
+					effect: s.attr('data-slide-effect') ? s.attr('data-slide-effect') : "slide",
+					speed: s.attr('data-slide-speed') ? s.attr('data-slide-speed') : 500,
+					keyboardControl: s.attr('data-keyboard') === "true",
+					mousewheelControl: s.attr('data-mousewheel') === "true",
+					mousewheelReleaseOnEdges: s.attr('data-mousewheel-release') === "true",
+					nextButton: next.length ? next.get(0) : null,
+					prevButton: prev.length ? prev.get(0) : null,
+					pagination: pag.length ? pag.get(0) : null,
+					paginationClickable: pag.length ? pag.attr("data-clickable") !== "false" : false,
+					paginationBulletRender: pag.length ? pag.attr("data-index-bullet") === "true" ? function (index, className) {
+						return '<span class="' + className + '">' + (index + 1) + '</span>';
+					} : null : null,
+					scrollbar: bar.length ? bar.get(0) : null,
+					scrollbarDraggable: bar.length ? bar.attr("data-draggable") !== "false" : true,
+					scrollbarHide: bar.length ? bar.attr("data-draggable") === "false" : false,
+					loop: s.attr('data-loop') !== "false",
+					simulateTouch: s.attr('data-simulate-touch') ? s.attr('data-simulate-touch') === "true" : false,
+					onTransitionStart: function (swiper) {
+						toggleSwiperInnerVideos(swiper);
+					},
+					onTransitionEnd: function (swiper) {
+						toggleSwiperCaptionAnimation(swiper);
+					},
+					onInit: function (swiper) {
+						toggleSwiperInnerVideos(swiper);
+						toggleSwiperCaptionAnimation(swiper);
 
-					var swiperParalax = s.find(".swiper-parallax");
+						var swiperParalax = s.find(".swiper-parallax");
 
-					for (var k = 0; k < swiperParalax.length; k++) {
-						var $this = $(swiperParalax[k]),
+						for (var k = 0; k < swiperParalax.length; k++) {
+							var $this = $(swiperParalax[k]),
 								speed;
 
-						if (parallax && !isIEBrows && !isMobile) {
-							if (speed = $this.attr("data-speed")) {
-								makeParallax($this, speed, s, false);
+							if (parallax && !isIEBrows && !isMobile) {
+								if (speed = $this.attr("data-speed")) {
+									makeParallax($this, speed, s, false);
+								}
 							}
 						}
+						$(window).on('resize', function () {
+							swiper.update(true);
+						})
 					}
-					$(window).on('resize', function () {
-						swiper.update(true);
-					})
-				}
-			});
+				});
 
 			$(window)
-			.on("resize", function () {
-				var mh = getSwiperHeight(s, "min-height"),
+				.on("resize", function () {
+					var mh = getSwiperHeight(s, "min-height"),
 						h = getSwiperHeight(s, "height");
-				if (h) {
-					s.css("height", mh ? mh > h ? mh : h : h);
-				}
-			})
-			.trigger("resize");
+					if (h) {
+						s.css("height", mh ? mh > h ? mh : h : h);
+					}
+				})
+				.trigger("resize");
 		}
 	}
 
@@ -536,7 +538,7 @@ $document.ready(function () {
 		var i;
 		for (i = 0; i < plugins.rdVideoPlayer.length; i++) {
 			var videoItem = plugins.rdVideoPlayer[i],
-					volumeWrap = $(".rd-video-volume-wrap");
+				volumeWrap = $(".rd-video-volume-wrap");
 
 			$(videoItem).RDVideoPlayer({});
 
@@ -569,11 +571,11 @@ $document.ready(function () {
 		var k;
 		for (k = 0; k < plugins.owl.length; k++) {
 			var c = $(plugins.owl[k]),
-					responsive = {};
+				responsive = {};
 
 			var aliaces = ["-", "-xs-", "-sm-", "-md-", "-lg-", "-xl-"],
-					values = [0, 480, 768, 992, 1200, 1485],
-					i, j;
+				values = [0, 480, 768, 992, 1200, 1485],
+				i, j;
 
 			for (i = 0; i < values.length; i++) {
 				responsive[values[i]] = {};
@@ -597,8 +599,8 @@ $document.ready(function () {
 			if (c.attr('data-dots-custom')) {
 				c.on("initialized.owl.carousel", function (event) {
 					var carousel = $(event.currentTarget),
-							customPag = $(carousel.attr("data-dots-custom")),
-							active = 0;
+						customPag = $(carousel.attr("data-dots-custom")),
+						active = 0;
 
 					if (carousel.attr('data-active')) {
 						active = parseInt(carousel.attr('data-active'));
@@ -623,7 +625,7 @@ $document.ready(function () {
 			if (c.attr('data-nav-custom')) {
 				c.on("initialized.owl.carousel", function (event) {
 					var carousel = $(event.currentTarget),
-							customNav = $(carousel.attr("data-nav-custom"));
+						customNav = $(carousel.attr("data-nav-custom"));
 
 					customNav.find("[data-owl-prev]").on('click', function (e) {
 						e.preventDefault();
@@ -695,81 +697,251 @@ $document.ready(function () {
 		plugins.rdRange.RDRange({});
 	}
 
-	/**
-	 * PhotoSwipe Gallery
-	 * @description Enables PhotoSwipe Gallery plugin
-	 */
-	if (plugins.photoSwipeGallery.length) {
+	$('.photoswipe-wrapper').each(function () {
+		$(this).find('a').each(function () {
+			$(this).attr('data-size', $(this).find('img').get(0).naturalWidth + 'x' + $(this).find('img').get(0).naturalHeight);
+		});
+	});
 
-		// init image click event
-		$document.delegate("[data-photo-swipe-item]", "click", function (event) {
-			event.preventDefault();
+	var initPhotoSwipeFromDOM = function (gallerySelector) {
 
-			var $el = $(this),
-					$galleryItems = $el.parents("[data-photo-swipe-gallery]").find("a[data-photo-swipe-item]"),
-					pswpElement = document.querySelectorAll('.pswp')[0],
-					encounteredItems = {},
-					pswpItems = [],
-					options,
-					pswpIndex = 0,
-					pswp;
+		// parse slide data (url, title, size ...) from DOM elements
+		// (children of gallerySelector)
+		var parseThumbnailElements = function (el) {
+			var thumbElements = $(el).find('.photoswipe-item:not(.isotope-hidden)').get(),
+				numNodes = thumbElements.length,
+				items = [],
+				figureEl,
+				linkEl,
+				size,
+				item;
 
-			if ($galleryItems.length == 0) {
-				$galleryItems = $el;
-			}
+			for (var i = 0; i < numNodes; i++) {
 
-			// loop over the gallery to build up the photoswipe items
-			$galleryItems.each(function () {
-				var $item = $(this),
-						src = $item.attr('href'),
-						size = $item.attr('data-size').split('x'),
-						pswdItem;
+				figureEl = thumbElements[i]; // <figure> element
 
-				if ($item.is(':visible')) {
-
-					// if we have this image the first time
-					if (!encounteredItems[src]) {
-						// build the photoswipe item
-						pswdItem = {
-							src: src,
-							w: parseInt(size[0], 10),
-							h: parseInt(size[1], 10),
-							el: $item // save link to element for getThumbBoundsFn
-						};
-
-						// store that we already had this item
-						encounteredItems[src] = {
-							item: pswdItem,
-							index: pswpIndex
-						};
-
-						// push the item to the photoswipe list
-						pswpItems.push(pswdItem);
-						pswpIndex++;
-					}
+				// include only element nodes
+				if (figureEl.nodeType !== 1) {
+					continue;
 				}
-			});
 
-			options = {
-				index: encounteredItems[$el.attr('href')].index,
+				linkEl = figureEl.children[0]; // <a> element
 
-				getThumbBoundsFn: function (index) {
-					var $el = pswpItems[index].el,
-							offset = $el.offset();
+				size = linkEl.getAttribute('data-size').split('x');
 
-					return {
-						x: offset.left,
-						y: offset.top,
-						w: $el.width()
+				// create slide object
+				if ($(linkEl).data('type') == 'video') {
+					item = {
+						html: $(linkEl).data('video')
+					};
+				} else {
+					item = {
+						src: linkEl.getAttribute('href'),
+						w: parseInt(size[0], 10),
+						h: parseInt(size[1], 10)
 					};
 				}
+
+				if (figureEl.children.length > 1) {
+					// <figcaption> content
+					item.title = $(figureEl).find('.caption').html();
+				}
+
+				if (linkEl.children.length > 0) {
+					// <img> thumbnail element, retrieving thumbnail url
+					item.msrc = linkEl.children[0].getAttribute('src');
+				}
+
+				item.el = figureEl; // save link to element for getThumbBoundsFn
+				items.push(item);
+			}
+
+			return items;
+		};
+
+		// find nearest parent element
+		var closest = function closest(el, fn) {
+			return el && (fn(el) ? el : closest(el.parentNode, fn));
+		};
+
+		function hasClass(element, cls) {
+			return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+		}
+
+		// triggers when user clicks on thumbnail
+		var onThumbnailsClick = function (e) {
+			e = e || window.event;
+			e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+			var eTarget = e.target || e.srcElement;
+
+			// find root element of slide
+			var clickedListItem = closest(eTarget, function (el) {
+				return (hasClass(el, 'photoswipe-item'));
+			});
+
+			if (!clickedListItem) {
+				return;
+			}
+
+			// find index of clicked item by looping through all child nodes
+			// alternatively, you may define index via data- attribute
+			var clickedGallery = clickedListItem.closest('.photoswipe-wrapper'),
+				childNodes = $(clickedListItem.closest('.photoswipe-wrapper')).find('.photoswipe-item:not(.isotope-hidden)').get(),
+				numChildNodes = childNodes.length,
+				nodeIndex = 0,
+				index;
+
+			for (var i = 0; i < numChildNodes; i++) {
+				if (childNodes[i].nodeType !== 1) {
+					continue;
+				}
+
+				if (childNodes[i] === clickedListItem) {
+					index = nodeIndex;
+					break;
+				}
+				nodeIndex++;
+			}
+
+			if (index >= 0) {
+				// open PhotoSwipe if valid index found
+				openPhotoSwipe(index, clickedGallery);
+			}
+			return false;
+		};
+
+		// parse picture index and gallery index from URL (#&pid=1&gid=2)
+		var photoswipeParseHash = function () {
+			var hash = window.location.hash.substring(1),
+				params = {};
+
+			if (hash.length < 5) {
+				return params;
+			}
+
+			var vars = hash.split('&');
+			for (var i = 0; i < vars.length; i++) {
+				if (!vars[i]) {
+					continue;
+				}
+				var pair = vars[i].split('=');
+				if (pair.length < 2) {
+					continue;
+				}
+				params[pair[0]] = pair[1];
+			}
+
+			if (params.gid) {
+				params.gid = parseInt(params.gid, 10);
+			}
+
+			return params;
+		};
+
+		var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
+			var pswpElement = document.querySelectorAll('.pswp')[0],
+				gallery,
+				options,
+				items;
+
+			items = parseThumbnailElements(galleryElement);
+
+			// define options (if needed)
+			options = {
+
+				closeOnScroll: false,
+
+				// define gallery index (for URL)
+				galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+				getThumbBoundsFn: function (index) {
+					// See Options -> getThumbBoundsFn section of documentation for more info
+					var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+						pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+						rect = thumbnail.getBoundingClientRect();
+
+					return {
+						x: rect.left,
+						y: rect.top + pageYScroll,
+						w: rect.width
+					};
+				}
+
 			};
 
-			// open the photoswipe gallery
-			pswp = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, pswpItems, options);
-			pswp.init();
-		});
-	}
+			// PhotoSwipe opened from URL
+			if (fromURL) {
+				if (options.galleryPIDs) {
+					// parse real index when custom PIDs are used
+					// http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+					for (var j = 0; j < items.length; j++) {
+						if (items[j].pid == index) {
+							options.index = j;
+							break;
+						}
+					}
+				} else {
+					// in URL indexes start from 1
+					options.index = parseInt(index, 10) - 1;
+				}
+			} else {
+				options.index = parseInt(index, 10);
+			}
+
+			// exit if index not found
+			if (isNaN(options.index)) {
+				return;
+			}
+
+			if (disableAnimation) {
+				options.showAnimationDuration = 0;
+			}
+
+			// Pass data to PhotoSwipe and initialize it
+			gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+			gallery.init();
+
+			gallery.listen('beforeChange', function () {
+				var currItem = $(gallery.currItem.container);
+				$('.pswp__video').removeClass('active');
+				var currItemIframe = currItem.find('.pswp__video').addClass('active');
+				$('.pswp__video').each(function () {
+					if (!$(this).hasClass('active')) {
+						$(this).attr('src', $(this).attr('src'));
+					}
+				});
+			});
+
+			gallery.listen('close', function () {
+				$('.pswp__video').each(function () {
+					$(this).attr('src', $(this).attr('src'));
+				});
+			});
+
+		};
+
+		// loop through all gallery elements and bind events
+		var galleryElements = document.querySelectorAll(gallerySelector);
+
+		for (var i = 0, l = galleryElements.length; i < l; i++) {
+			galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+			galleryElements[i].onclick = onThumbnailsClick;
+		}
+
+		// Parse URL and open gallery if it contains #&pid=3&gid=1
+		var hashData = photoswipeParseHash();
+		if (hashData.pid && hashData.gid) {
+			openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+		}
+
+	};
+
+	// execute above function
+
+	initPhotoSwipeFromDOM('.photoswipe-wrapper');
+
+
 
 	/**
 	 * Magnificent image zoom
@@ -824,8 +996,8 @@ $document.ready(function () {
 
 			modalItem.on('hidden.bs.modal', $.proxy(function () {
 				var activeModal = $(this),
-						rdVideoInside = activeModal.find('video'),
-						youTubeVideoInside = activeModal.find('iframe');
+					rdVideoInside = activeModal.find('video'),
+					youTubeVideoInside = activeModal.find('iframe');
 
 				if (rdVideoInside.length) {
 					rdVideoInside[0].pause();
@@ -835,8 +1007,8 @@ $document.ready(function () {
 					var videoUrl = youTubeVideoInside.attr('src');
 
 					youTubeVideoInside
-					.attr('src', '')
-					.attr('src', videoUrl);
+						.attr('src', '')
+						.attr('src', videoUrl);
 				}
 			}, modalItem))
 		}
@@ -851,21 +1023,21 @@ $document.ready(function () {
 	if (plugins.mailchimp.length) {
 		for (i = 0; i < plugins.mailchimp.length; i++) {
 			var $mailchimpItem = $(plugins.mailchimp[i]),
-					$email = $mailchimpItem.find('input[type="email"]');
+				$email = $mailchimpItem.find('input[type="email"]');
 
 			// Required by MailChimp
 			$mailchimpItem.attr('novalidate', 'true');
 			$email.attr('name', 'EMAIL');
 
-			$mailchimpItem.on('submit', $.proxy( function ( $email, event ) {
+			$mailchimpItem.on('submit', $.proxy(function ($email, event) {
 				event.preventDefault();
 
 				var $this = this;
 
 				var data = {},
-						url = $this.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
-						dataArray = $this.serializeArray(),
-						$output = $("#" + $this.attr("data-form-output"));
+					url = $this.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
+					dataArray = $this.serializeArray(),
+					$output = $("#" + $this.attr("data-form-output"));
 
 				for (i = 0; i < dataArray.length; i++) {
 					data[dataArray[i].name] = dataArray[i].value;
@@ -885,8 +1057,8 @@ $document.ready(function () {
 					success: function (resp) {
 						$output.html(resp.msg).addClass('active');
 						$email[0].value = '';
-						var $label = $('[for="'+ $email.attr( 'id' ) +'"]');
-						if ( $label.length ) $label.removeClass( 'focus not-empty' );
+						var $label = $('[for="' + $email.attr('id') + '"]');
+						if ($label.length) $label.removeClass('focus not-empty');
 
 						setTimeout(function () {
 							$output.removeClass("active");
@@ -933,7 +1105,7 @@ $document.ready(function () {
 				});
 
 				return false;
-			}, $mailchimpItem, $email ));
+			}, $mailchimpItem, $email));
 		}
 	}
 
@@ -944,10 +1116,10 @@ $document.ready(function () {
 
 			$campaignItem.on('submit', $.proxy(function (e) {
 				var data = {},
-						url = this.attr('action'),
-						dataArray = this.serializeArray(),
-						$output = $("#" + plugins.campaignMonitor.attr("data-form-output")),
-						$this = $(this);
+					url = this.attr('action'),
+					dataArray = this.serializeArray(),
+					$output = $("#" + plugins.campaignMonitor.attr("data-form-output")),
+					$this = $(this);
 
 				for (i = 0; i < dataArray.length; i++) {
 					data[dataArray[i].name] = dataArray[i].value;
@@ -984,8 +1156,8 @@ $document.ready(function () {
 				var inputs = $this[0].getElementsByTagName('input');
 				for (var i = 0; i < inputs.length; i++) {
 					inputs[i].value = '';
-					var label = document.querySelector( '[for="'+ inputs[i].getAttribute( 'id' ) +'"]' );
-					if( label ) label.classList.remove( 'focus', 'not-empty' );
+					var label = document.querySelector('[for="' + inputs[i].getAttribute('id') + '"]');
+					if (label) label.classList.remove('focus', 'not-empty');
 				}
 
 				return false;
@@ -996,19 +1168,19 @@ $document.ready(function () {
 	// RD Mailform
 	if (plugins.rdMailForm.length) {
 		var i, j, k,
-				msg = {
-					'MF000': 'Successfully sent!',
-					'MF001': 'Recipients are not set!',
-					'MF002': 'Form will not work locally!',
-					'MF003': 'Please, define email field in your form!',
-					'MF004': 'Please, define type of your form!',
-					'MF254': 'Something went wrong with PHPMailer!',
-					'MF255': 'Aw, snap! Something went wrong.'
-				};
+			msg = {
+				'MF000': 'Successfully sent!',
+				'MF001': 'Recipients are not set!',
+				'MF002': 'Form will not work locally!',
+				'MF003': 'Please, define email field in your form!',
+				'MF004': 'Please, define type of your form!',
+				'MF254': 'Something went wrong with PHPMailer!',
+				'MF255': 'Aw, snap! Something went wrong.'
+			};
 
 		for (i = 0; i < plugins.rdMailForm.length; i++) {
 			var $form = $(plugins.rdMailForm[i]),
-					formHasCaptcha = false;
+				formHasCaptcha = false;
 
 			$form.attr('novalidate', 'novalidate').ajaxForm({
 				data: {
@@ -1020,10 +1192,10 @@ $document.ready(function () {
 						return;
 
 					var form = $(plugins.rdMailForm[this.extraData.counter]),
-							inputs = form.find("[data-constraints]"),
-							output = $("#" + form.attr("data-form-output")),
-							captcha = form.find('.recaptcha'),
-							captchaFlag = true;
+						inputs = form.find("[data-constraints]"),
+						output = $("#" + form.attr("data-form-output")),
+						captcha = form.find('.recaptcha'),
+						captchaFlag = true;
 
 					output.removeClass("active error success");
 
@@ -1032,36 +1204,38 @@ $document.ready(function () {
 						// veify reCaptcha
 						if (captcha.length) {
 							var captchaToken = captcha.find('.g-recaptcha-response').val(),
-									captchaMsg = {
-										'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
-										'CPT002': 'Something wrong with google reCaptcha'
-									};
+								captchaMsg = {
+									'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
+									'CPT002': 'Something wrong with google reCaptcha'
+								};
 
 							formHasCaptcha = true;
 
 							$.ajax({
-								method: "POST",
-								url: "bat/reCaptcha.php",
-								data: {'g-recaptcha-response': captchaToken},
-								async: false
-							})
-							.done(function (responceCode) {
-								if (responceCode !== 'CPT000') {
-									if (output.hasClass("snackbars")) {
-										output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
+									method: "POST",
+									url: "bat/reCaptcha.php",
+									data: {
+										'g-recaptcha-response': captchaToken
+									},
+									async: false
+								})
+								.done(function (responceCode) {
+									if (responceCode !== 'CPT000') {
+										if (output.hasClass("snackbars")) {
+											output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
 
-										setTimeout(function () {
-											output.removeClass("active");
-										}, 3500);
+											setTimeout(function () {
+												output.removeClass("active");
+											}, 3500);
 
-										captchaFlag = false;
-									} else {
-										output.html(captchaMsg[responceCode]);
+											captchaFlag = false;
+										} else {
+											output.html(captchaMsg[responceCode]);
+										}
+
+										output.addClass("active");
 									}
-
-									output.addClass("active");
-								}
-							});
+								});
 						}
 
 						if (!captchaFlag) {
@@ -1083,7 +1257,7 @@ $document.ready(function () {
 						return;
 
 					var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
-							form = $(plugins.rdMailForm[this.extraData.counter]);
+						form = $(plugins.rdMailForm[this.extraData.counter]);
 
 					output.text(msg[result]);
 					form.removeClass('form-in-process');
@@ -1097,12 +1271,12 @@ $document.ready(function () {
 						return;
 
 					var form = $(plugins.rdMailForm[this.extraData.counter]),
-							output = $("#" + form.attr("data-form-output")),
-							select = form.find('select');
+						output = $("#" + form.attr("data-form-output")),
+						select = form.find('select');
 
 					form
-					.addClass('success')
-					.removeClass('form-in-process');
+						.addClass('success')
+						.removeClass('form-in-process');
 
 					if (formHasCaptcha) {
 						grecaptcha.reset();
@@ -1143,5 +1317,3 @@ $document.ready(function () {
 	}
 
 });
-
-

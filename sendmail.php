@@ -33,9 +33,10 @@ $messsage = '
 </html>';
 
 // Aditional headers
-$headers = 'From: ventas@temmoran.com'. "\r\n" .
+$headers = 'From: noreply@example.com'. "\r\n" .
 'MIME-Version: 1.0' . "\r\n" .
-'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
+'X-Mailer: PHP/'. phpversion();
 
 // Send
 if(mail($to, $subjetc, $messsage, $headers)){
