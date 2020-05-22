@@ -18,7 +18,7 @@ if ($telefono == "") {
 }
 
 
-$to  = 'byronjimenez9911@gmail.com';
+$to  = 'desarrolloweb@grupofenix.com.sv';
 $subjetc = 'tem-moran contact form from: '. $email;
 $messsage = '
 <html>
