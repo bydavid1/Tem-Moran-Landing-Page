@@ -19,15 +19,12 @@ if ($telefono == "") {
 
 
 $to  = 'desarrolloweb@grupofenix.com.sv';
-$subjetc = 'tem-moran contact form from: '. $email;
+$subjetc = 'Mensaje enviado desde sitio web por '. $email;
 $messsage = '
 <html>
-<head>
-  <title>Mensaje enviado por '. $nombre .' desde el formulario de contacto de Tem-moran</title>
-</head>
 <body>
-  <h6>Mensaje:</h6>
-  <p>' .$mensaje. '</p>
+  <h2>Mensaje enviado por '. $nombre .' desde el formulario de contacto de Tem-moran</h2>
+  <b>Mensaje: </b>' .$mensaje .' <br>
   <b>Contacto: </b> '. $telefono .'
 </body>
 </html>';

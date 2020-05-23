@@ -17,31 +17,31 @@ include("layouts/header.php");
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="name">Nombre :</label>
-                  <input type="text" class="input-field" name="name" value="Byron" placeholder="Ingrese su nombre completo" required>
+                  <input type="text" class="input-field" name="name" placeholder="Ingrese su nombre completo" required>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="email">Email :</label>
-                  <input type="email" class="input-field" name="email" value="bm@gmail.com" placeholder="Ingrese su correo" required>
+                  <input type="email" class="input-field" name="email" placeholder="Ingrese su correo" required>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="subjict">Asunto :</label>
-                  <input type="text" class="input-field" name="subject" value="b,@sasa.com" placeholder="Ingrese su asunto" required>
+                  <input type="text" class="input-field" name="subject" placeholder="Ingrese su asunto" required>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="form-group">
                   <label for="phone">Telefono :</label>
-                  <input type="text" class="input-field" name="phone" value="556555" placeholder="Ingrese su numero de telefono">
+                  <input type="text" class="input-field" name="phone" placeholder="Ingrese su numero de telefono">
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="form-group button-area">
                   <label for="message">Mensaje :</label>
-                  <textarea name="message" class="input-field textarea" placeholder="Ingrese su mensaje" required>sasasas</textarea>
+                  <textarea name="message" class="input-field textarea" placeholder="Ingrese su mensaje" required></textarea>
                 </div>
               </div>
               <div class="col-lg-12">
