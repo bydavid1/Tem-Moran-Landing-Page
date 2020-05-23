@@ -12,7 +12,7 @@ include("layouts/header.php");
             <div class="col-md-6 col-sm-9 postfix-md-right-90 postfix-xl-right-0" data-caption-animate="fadeInDown"
               data-caption-delay="200">
               <h1 style="color: #fff !important; text-shadow: 2px 2px 2px #000;">Fabricación de productos de metal no clasificados. </h1>
-              <p class="h6 offset-top-40" style="color: #fff !important; text-shadow: 1px 1px 10px #000;">Somos líderes en la fabricación de productos
+              <p class="h6 offset-top-40" style="color: #fff !important; text-shadow: 0px 0px 0.4em #000;">Somos líderes en la fabricación de productos
                 metálicos para uso estructural, industrial, comercial y residencial. Brindamos todo tipo de soluciones
                 en hierro negro, acero inoxidable, acero al carbón y aluminio. Nos especializamos en soldadura
                 eléctrica, Tic, Mig y oxiacetilénico y en todo tipo de montajes industriales, comerciales y
@@ -33,7 +33,7 @@ include("layouts/header.php");
               data-caption-delay="200">
               <h1 style="color: #fff !important; text-shadow: 2px 2px 2px #000;">Mantenimientos Industriales, soluciones eléctricas y aire
                 acondicionado. </h1>
-              <p class="h6 offset-top-40" style="color: #fff !important; text-shadow: 1px 1px 10px #000;">Somos especialistas en mantenimientos
+              <p class="h6 offset-top-40" style="color: #fff !important; text-shadow: 0px 0px 0.4em #000;">Somos especialistas en mantenimientos
                 industriales preventivos y correctivos. Contamos con alta gama de servicios a la orden de la industria
                 papelera, alimenticia, plásticos, pinturas y más. Ofrecemos montajes y mantenimientos de equipos de aire
                 acondicionado industrial, comercial y residencial. Un equipo de especialistas multidisciplinarios y más
