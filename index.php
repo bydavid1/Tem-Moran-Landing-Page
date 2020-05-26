@@ -85,7 +85,7 @@ include("layouts/header.php");
   <div class="shell">
     <div class="title title-white">
       <h2>Nuestra <span>Experiencia</span></h2>
-      <p class="text-gray-lighter">Contamos con más de quince años de experiencia en:</p>
+      <p class="text-gray-lighter">Contamos con más de 12 años de experiencia en:</p>
     </div>
     <div class="range">
       <div class="col-sm-12 col-lg-3 mr-lg-5 ml-lg-5"><span class="flaticon-robot" style="color: #82FFF5"></span>
