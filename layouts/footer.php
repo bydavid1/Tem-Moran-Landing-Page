@@ -39,6 +39,12 @@
                     <div class="unit-body"><a class="text-gray-lighter" href="mailto:#">ventas@temmoran.com</a></div>
                   </div>
                 </li>
+                <li>
+                  <div class="unit unit-horizontal unit-spacing-xs">
+                    <div class="unit-left"><span class="icon fa-facebook" style="color: #82FFF5"></span></div>
+                    <div class="unit-body"><a class="text-gray-lighter" href="https://fb.me/TemMorandeCA">Inversiones Tem Moran de Centroamerica</a></div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>

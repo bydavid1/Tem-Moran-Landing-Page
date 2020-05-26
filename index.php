@@ -18,8 +18,7 @@ include("layouts/header.php");
                 eléctrica, Tic, Mig y oxiacetilénico y en todo tipo de montajes industriales, comerciales y
                 residenciales. </p>
               <div class="group"><a class="btn btn-white btn-form" href="servicios">Nuestros servicios</a><a
-                  class="btn btn-default btn-form" href="contactanos" data-toggle="modal"
-                  data-target="#modalContact">Contáctanos</a></div>
+                  class="btn btn-default btn-form" href="contactanos">Contáctanos</a></div>
             </div>
           </div>
         </div>
@@ -39,8 +38,7 @@ include("layouts/header.php");
                 acondicionado industrial, comercial y residencial. Un equipo de especialistas multidisciplinarios y más
                 de 12 años de experiencia nos respaldan.</p>
               <div class="group"><a class="btn btn-white btn-form" href="servicios">Nuestros servicios</a><a
-                  class="btn btn-default btn-form" href="contactanos" data-toggle="modal"
-                  data-target="#modalContact">Contáctanos</a></div>
+                  class="btn btn-default btn-form" href="https://fb.me/TemMorandeCA"><i class="fa fa-facebook mr-1"></i>Siguenos</a></div>
             </div>
           </div>
         </div>

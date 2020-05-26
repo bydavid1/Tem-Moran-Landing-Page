@@ -33,8 +33,14 @@
         <nav class="rd-navbar rd-navbar-secondary" data-stick-up-clone="true" data-layout="rd-navbar-fixed"
           data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
           data-lg-device-layout="rd-navbar-static" data-lg-stick-up-offset="252px">
-          <div class="">
-          </div>
+          <div class="rd-navbar-inner">
+                  <ul class="list-inline list-inline-lg offset-top-0">
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-facebook" href="https://fb.me/TemMorandeCA"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-twitter" href="#"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-map-marker" href="https://goo.gl/maps/Tqfx3LtjQhFFjou76"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-envelope" href="mailto:ventas@temmoran.com"></a></li>
+                  </ul>
+                </div>
           <div class="rd-navbar-inner">
             <!-- RD Navbar Panel-->
             <div class="rd-navbar-panel">
@@ -59,7 +65,7 @@
                     </div>
                   </li>
                   <li>
-                    <div class="unit unit-horizontal unit-spacing-xs">
+                    <div class="unit unit-horizontal">
                       <div class="unit-left"><span class="icon icon-primary fa-map-marker"></span></div>
                       <div class="unit-body">
                         <div class="title"><span class="small">Direccion:</span></div>
@@ -69,7 +75,7 @@
                     </div>
                   </li>
                   <li>
-                    <div class="unit unit-horizontal unit-spacing-xs">
+                    <div class="unit unit-horizontal">
                       <div class="unit-left"><span class="icon icon-primary fa-envelope"></span></div>
                       <div class="unit-body">
                         <div class="title"><span class="small">Correo Electronico</span></div>
@@ -77,24 +83,14 @@
                       </div>
                     </div>
                   </li>
-                  <li>
-                    <div class="unit unit-horizontal unit-spacing-xs">
-                      <div class="unit-left"><span class="icon icon-primary fa-facebook"></span></div>
-                      <div class="unit-body">
-                        <div class="title"><span class="small">Facebook</span></div>
-                        <h6><a href="fb.me/TemMorandeCA">Tem Moran</a></h6>
-                      </div>
-                    </div>
-                  </li>
                 </ul>
               </div>
               <div class="rd-navbar-collapse-items">
                 <ul class="list-inline list-inline-lg offset-top-0">
-                  <li><a class="ioon icon-sm icon-silver-chalice fa-facebook" href="#"></a></li>
-                  <li><a class="ioon icon-sm icon-silver-chalice fa-twitter" href="#"></a></li>
-                  <li><a class="ioon icon-sm icon-silver-chalice fa-instagram" href="#"></a></li>
-                  <li><a class="ioon icon-sm icon-silver-chalice fa-google-plus" href="#"></a></li>
-                  <li><a class="ioon icon-sm icon-silver-chalice fa-pinterest-p" href="#"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-facebook" href="https://fb.me/TemMorandeCA"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-twitter" href="#"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-map-marker" href="https://goo.gl/maps/Tqfx3LtjQhFFjou76"></a></li>
+                    <li><a class="ioon icon-sm icon-silver-chalice fa-envelope" href="mailto:ventas@temmoran.com"></a></li>
                 </ul>
               </div>
             </div>
